@@ -48,3 +48,7 @@ def informationcentre():
 @app.route("/testimonials")
 def testimonials():
     return render_template("testimonials.html")
+
+@app.route("/studentfinancialservices")
+def studentfinancialservices():
+    return render_template("sfs.html")
