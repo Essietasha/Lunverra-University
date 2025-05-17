@@ -1085,188 +1085,54 @@ nav .lunverra a {
   justify-content: center;
 }
 
-.cont {
-  max-width: 1100px;
-  height: 1800px;
-  max-width: 1100px;
-  margin: 10px auto;
-}
-
-.newinfo {
-  padding: 10px 200px;
-  font-size: 1.5rem;
-  color: white;
-}
-
 .testimonials {
-  max-width: 1100px;
-  margin: 30px 10px;
-  padding: 20px;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  margin-bottom: 10px;
-}
-
-/* .boxshad:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-} */
-.cardheader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.cardheader h3 {
-  font-size: 15px;
-}
-
-.cardheader p {
-  opacity: 50%;
-  font-size: 12px;
-}
-
-.cardimg {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid rgb(162, 96, 162);
-  margin-right: 10px;
-}
-
-.cardlead {
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.cardquote {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.4;
-  opacity: 70%;
-  margin-bottom: 20px;
-}
-
-.cardpurple {
-  background: rgb(147, 10, 147);
-  color: white;
-}
-
-.deepblue {
-  background-color: rgb(38, 71, 71);
-  color: white;
-}
-
-.blackblue {
-  background-color: midnightblue;
-  color: white;
-}
-
-.card:nth-of-type(1) {
-  grid-column: 1/3;
-}
-
-.card:nth-of-type(4) {
-  grid-column: 2/4;
-  grid-row: 2;
-}
-
-.card:nth-of-type(5) {
-  grid-column: 4;
-  grid-row: 1/3;
-}
-
-.footer {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
   text-align: center;
 }
-
-.moretestimonials {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 20px;
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
+}
+.testimonials .testimonialGrid {
   display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-
-.card2 {
-  background-color: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  margin-bottom: 10px;
+.testimonials .testimonialGrid .testimonialCard {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
-
-.cardimg2 {
-  width: 50px;
-  height: 50px;
+.testimonials .testimonialGrid .testimonialCard:hover {
+  transform: translateY(-5px);
+}
+.testimonials .testimonialGrid .testimonialCard img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgb(162, 96, 162);
-  margin-right: 10px;
+  margin-bottom: 1rem;
 }
-
-.cardheadrer2 h3 {
-  font-size: 15px;
-}
-
-.cardheadrer2 p {
-  opacity: 50%;
-  font-size: 12px;
-}
-
-.cardlead2 {
-  font-size: 1rem;
+.testimonials .testimonialGrid .testimonialCard .studentName {
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 20px;
+  margin-bottom: 0.2rem;
+  color: #222;
 }
-
-.cardquote2 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.4;
-  opacity: 70%;
-  margin-bottom: 20px;
+.testimonials .testimonialGrid .testimonialCard .studentProgram {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
 }
-
-.pink {
-  background: rgb(183, 33, 183);
-  color: white;
-}
-
-.dipblue {
-  background: rgb(64, 129, 129);
-  color: white;
-}
-
-.migblue {
-  background: rgb(9, 9, 33);
-  color: white;
-}
-
-@media (max-width: 760px) {
-  .testimonials {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-  .card:nth-of-type(1) {
-    grid-column: 1;
-  }
-  .card:nth-of-type(4) {
-    grid-column: 1/2;
-    grid-row: 4;
-  }
-  .card:nth-of-type(5) {
-    grid-column: 1;
-    grid-row: 5;
-  }
+.testimonials .testimonialGrid .testimonialCard .studentFeedback {
+  font-style: italic;
+  color: #444;
+  line-height: 1.5;
 }
