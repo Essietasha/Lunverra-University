@@ -1,0 +1,157 @@
+@import 'variables';
+
+.CourseInfoPage {
+    height: 90vh;
+    background-image: url(/static/images/office.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flexCenter();
+
+    .CourseInfoPageTextEl{
+
+        p{
+            font-size: 4rem;
+            font-weight: 500;
+            font-family:Arial, Helvetica, sans-serif;
+            color: $white;
+            text-align: center
+        }
+    }
+
+    .CourseInfoPageLink{
+        @include flexCenter();
+
+        a{
+            padding: 0.6rem 3rem;
+            text-decoration: none;
+            background-color: $navColor;
+            color: $white;
+            border-radius: 5px;
+            transition: background-color 1s ease-in-out, color 1s ease-in-out;
+
+            &:hover{
+                background-color: $white;
+                color: $navColor;
+            }
+        }
+    }
+}
+
+
+.CourseInfoPageSecII {
+    background-color: #fff;
+    line-height: 2.0rem;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 6rem 10rem;
+}
+
+.openMindedSec {
+    background-image: url(/static/images/beautstudents.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 5rem;
+
+    .openMindedTextEl {
+        color: white;
+
+        h2{
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 3rem;
+        }
+
+        p{
+            font-size: 1.2rem;
+            line-height: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .acadmeicsDiv{
+    
+            a{
+                background-color: $white;
+                padding: 0.7rem 2rem;
+                border: 3px solid $white;
+                text-decoration: none;
+                color: $navColor;
+                font-weight: bold;
+                font-size: 1.5rem;
+
+                &:hover{
+                    background-color: $navColor;
+                    color: $white;
+                    transition: 1s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+
+
+.batesStudent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    padding: 3rem 6rem;
+
+    h2{
+        font-size: 2rem;
+        font-weight: 500;
+        padding: 2rem 0rem;
+    }
+
+    p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+
+.coursesContainer {
+    line-height: 1.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    padding: 1rem 8rem;
+
+    .minorAndMajor{
+        padding-left: 2rem;
+
+        h1{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        p{
+            font-weight: 600;
+        }
+    }
+
+    .majorCourses {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 2rem;
+        line-height: 2rem;
+
+        li{
+            list-style: none;
+            text-decoration: underline;
+            color: #1563a7;
+            text-decoration-color: #1563a7; 
+        }
+    }
+}
+.dualDegree {
+    line-height: 2.0rem;
+    padding: 1rem 0rem;
+}

@@ -1,0 +1,155 @@
+@import 'variables';
+
+
+.academicsImgCont {
+    height: 30vh;
+
+    img{
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.academicsMainPage {
+    background-color: rgb(246, 242, 242);
+
+    .academicsMainPageDiv {
+        padding: 5rem 5rem 3rem 8rem;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        line-height: 2;
+    }
+
+    .firstbox {
+
+        h1 {
+            color: rgb(148, 6, 6);
+            font-size: 30px;
+        }
+    }
+
+    
+    .secondbox {
+
+        .sap{
+            text-decoration: none;
+            color: white;
+            background-color: rgb(148, 6, 6);
+            border-radius: 10px;
+            text-align: center;
+            padding: 1rem;
+
+            a{
+                text-decoration: none;
+                color: $white;
+            }
+
+            &:hover{
+                background-color: rgb(116, 10, 10);
+            }
+        }
+
+        hr{
+            height: 5px;
+            background-color: rgb(70, 63, 63);
+            border: none;
+            margin-top: -8px;
+        }
+    }
+}
+
+.topLinksCont {
+    background-color: rgb(238, 237, 237);
+    padding: 0rem 2rem;
+
+    h1 {
+        color:rgb(148, 6, 6);
+        padding: 0.5rem 0rem;
+    }
+    
+    a {
+        color:rgb(87, 87, 230);
+
+        &:hover {
+            color: rgb(181, 181, 33);
+        }
+    }
+}
+
+
+.coursesMainContainer {
+  background-color: rgb(246, 242, 242);
+  padding: 5rem 7rem;
+
+  h1 {
+    color: rgb(148, 6, 6);
+    padding-bottom: 2rem;
+  }
+
+  .courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    .course-card {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4); // dark overlay
+        z-index: 1;
+        transition: background 0.3s ease;
+      }
+
+      .course-content {
+        position: absolute;
+        z-index: 2;
+        color: #fff;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+        }
+
+        button {
+          padding: 0.5rem 1rem;
+          background-color: #881125;
+          border: none;
+          border-radius: 6px;
+          color: #fff;
+          font-weight: 500;
+          cursor: pointer;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background-color: #b71735;
+          }
+        }
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+        &::before {
+          background: rgba(0, 0, 0, 0.6); // darken overlay on hover
+        }
+      }
+    }
+  }
+}

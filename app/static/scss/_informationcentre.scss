@@ -1,0 +1,138 @@
+@import 'variables';
+
+.infoPage{
+    background-color: #fff;
+}
+
+.honorsCollege {
+    background-image: url(/static/images/studyabroadd.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+
+
+    .honorsFlex{
+        @include flexCenter();
+        padding-left: 5rem;
+
+            
+        p{
+            font-size: 1rem;
+            padding-top: 1rem;
+        }
+
+        a{
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            background-color: transparent;
+            border: 3px solid #fff;
+            text-decoration: none;
+            transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+
+            &:hover{
+                background-color: #fff;
+                color: #333;
+            }
+        }
+    }
+}
+
+.places{
+    padding: 2rem 5rem;
+
+    p{
+        font-size: 1.1rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+}
+
+.lunverraStudent{
+    padding: 2rem 5rem;
+
+    h2{
+        color: #881125;
+    }
+}
+
+.majorMinor{
+    h1{
+        font-size: 2rem;
+        padding: 1rem 0rem;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .courseTitle{
+        font-weight: bold;
+    }
+
+    .majorMinorGrid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .applyBtn{
+        margin-top: 1rem;
+
+        a{
+            background-color: #111;
+            color: #fff;
+            padding: 0.5rem 2rem;
+            border-radius: 3px;
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+.resources {
+
+
+    h1 {
+        text-align: center;
+        font-weight: bolder;
+        color: #111;
+    }
+
+    a {
+        text-decoration: none;
+        color: blue;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .resourceGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+        padding: 5rem;
+
+        a{
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        }
+    }
+}

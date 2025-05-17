@@ -1,0 +1,1139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+.CourseInfoPage {
+  height: 90vh;
+  background-image: url(/static/images/office.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CourseInfoPage .CourseInfoPageTextEl p {
+  font-size: 4rem;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.CourseInfoPage .CourseInfoPageLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CourseInfoPage .CourseInfoPageLink a {
+  padding: 0.6rem 3rem;
+  text-decoration: none;
+  background-color: #881125;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+.CourseInfoPage .CourseInfoPageLink a:hover {
+  background-color: #fff;
+  color: #881125;
+}
+
+.CourseInfoPageSecII {
+  background-color: #fff;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 6rem 10rem;
+}
+
+.openMindedSec {
+  background-image: url(/static/images/beautstudents.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 5rem;
+}
+.openMindedSec .openMindedTextEl {
+  color: white;
+}
+.openMindedSec .openMindedTextEl h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3rem;
+}
+.openMindedSec .openMindedTextEl p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+.openMindedSec .openMindedTextEl .acadmeicsDiv a {
+  background-color: #fff;
+  padding: 0.7rem 2rem;
+  border: 3px solid #fff;
+  text-decoration: none;
+  color: #881125;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.openMindedSec .openMindedTextEl .acadmeicsDiv a:hover {
+  background-color: #881125;
+  color: #fff;
+  transition: 1s ease-in-out;
+}
+
+.batesStudent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1.5rem;
+  background-color: #fff;
+  font-size: 1rem;
+  padding: 3rem 6rem;
+}
+.batesStudent h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 2rem 0rem;
+}
+.batesStudent p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.coursesContainer {
+  line-height: 1.5rem;
+  background-color: #fff;
+  font-size: 1rem;
+  padding: 1rem 8rem;
+}
+.coursesContainer .minorAndMajor {
+  padding-left: 2rem;
+}
+.coursesContainer .minorAndMajor h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.coursesContainer .minorAndMajor p {
+  font-weight: 600;
+}
+.coursesContainer .majorCourses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 2rem;
+  line-height: 2rem;
+}
+.coursesContainer .majorCourses li {
+  list-style: none;
+  text-decoration: underline;
+  color: #1563a7;
+  text-decoration-color: #1563a7;
+}
+
+.dualDegree {
+  line-height: 2rem;
+  padding: 1rem 0rem;
+}
+
+.nav-about {
+  height: 50px;
+  background-color: #ffebc9;
+  padding: 1rem 4rem;
+}
+.nav-about .navicons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nav-about .navicons a:nth-child(1) {
+  margin-left: 10rem;
+}
+.nav-about .navicons a:nth-child(2) {
+  color: rgb(184, 52, 4);
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.found {
+  padding: 4rem 4rem 2rem 4rem;
+  text-align: center;
+  background-color: rgb(248, 252, 255);
+}
+.found p {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+.aboutSec {
+  background-color: rgb(248, 252, 255);
+  padding: 2rem 5rem;
+}
+.aboutSec .aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.aboutSec .aboutGrid .boxes {
+  background-color: #e1e1e1;
+  height: 450px;
+}
+.aboutSec .aboutGrid .boxes h3 {
+  border: 20px solid #4B5763;
+  background-color: #4B5763;
+  color: #FFF;
+  font-weight: 300;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.aboutSec .aboutGrid .boxes p {
+  padding: 1rem;
+  font-size: 1rem;
+  opacity: 90%;
+}
+.aboutSec .aboutGrid .boxes a {
+  line-height: 2;
+  color: #0C75A1;
+}
+.aboutSec .aboutGrid .boxes ul {
+  color: #698088;
+}
+
+.mainpage {
+  height: 100vh;
+  margin: auto;
+  background-image: url(/static/images/gradmale.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 150px;
+}
+.mainpage h1 {
+  color: #111;
+  padding-top: 150px;
+}
+.mainpage h4 {
+  color: #111;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.mainpage .homeLearnMoreBtn {
+  margin-top: 4rem;
+}
+.mainpage .homeLearnMoreBtn a {
+  color: rgb(183, 15, 15);
+  padding: 1rem 3.5rem;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.mainpage .homeLearnMoreBtn a:hover {
+  color: rgb(188, 44, 44);
+  font-size: 1.1rem;
+  transition: 1s ease-out;
+  transform: scale(0.8);
+}
+
+.academics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem 2rem 2rem;
+  color: #fff;
+}
+.academics .block {
+  height: 500px;
+  padding: 1rem;
+  text-align: center;
+}
+.academics .block:nth-child(1), .academics .block:nth-child(2), .academics .block:nth-child(3), .academics .block:nth-child(4) {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.academics .block:nth-child(1)::before, .academics .block:nth-child(2)::before, .academics .block:nth-child(3)::before, .academics .block:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.academics .block:nth-child(1) {
+  background-image: url(/static/images/gradmale.webp);
+}
+.academics .block:nth-child(1)::before {
+  background-color: rgba(2, 49, 69, 0.4);
+}
+.academics .block:nth-child(2) {
+  background-image: url(/static/images/academicprog.webp);
+}
+.academics .block:nth-child(2)::before {
+  background-color: rgba(93, 89, 19, 0.4);
+}
+.academics .block:nth-child(3) {
+  background-image: url(/static/images/jenkins.webp);
+}
+.academics .block:nth-child(3)::before {
+  background-color: rgba(10, 93, 128, 0.4);
+}
+.academics .block:nth-child(4) {
+  background-image: url(/static/images/camptours.webp);
+}
+.academics .block:nth-child(4)::before {
+  background-color: rgba(60, 1, 11, 0.4);
+}
+.academics .block h2 {
+  margin-top: 20px;
+  text-align: center;
+}
+.academics .block hr {
+  width: 80%;
+  height: 0.8px;
+  background-color: black;
+  border: none;
+  margin-top: 1.5rem;
+  margin-left: 1.2rem;
+}
+.academics .block p {
+  margin-top: 15px;
+  font-size: larger;
+  text-align: center;
+}
+.academics .block button {
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  color: rgb(193, 16, 16);
+  border: none;
+  margin-bottom: 10px;
+}
+.academics .block .imgConts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+.academics .block .imgConts img {
+  height: 120px;
+  width: 120px;
+  background-size: cover;
+  border-radius: 50%;
+}
+.academics .block .textConts {
+  height: 55%;
+}
+.academics .block .textConts p {
+  font-size: 1rem;
+}
+.academics .block .academicsbtn {
+  height: 15%;
+  margin-top: 10px;
+}
+.academics .block .academicsbtn a {
+  color: rgb(183, 15, 15);
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+}
+.academics .block .academicsbtn a:hover {
+  color: rgb(188, 44, 44);
+  transition: 1s ease-out;
+  transform: scale(0.8);
+}
+
+.divider {
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  background-color: #881125;
+}
+
+.grad {
+  width: 100%;
+  height: 90vh;
+  margin: auto;
+  background-image: url(/static/images/Grad.webp);
+  background-size: contain;
+  padding-top: 15rem;
+}
+.grad .date {
+  width: 90%;
+  height: 30px;
+  margin: auto;
+}
+.grad .date p {
+  color: rgb(231, 231, 24);
+  font-size: 1rem;
+}
+.grad .generosity {
+  padding: 0rem 3rem;
+  margin: auto;
+}
+.grad .generosity p {
+  color: rgb(247, 247, 213);
+  padding-top: 30px;
+  font-family: sans-serif;
+}
+.grad .generosity a {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 550;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.grad .generosity a:visited {
+  color: white;
+}
+.grad .generosity a:hover {
+  color: pink;
+}
+
+.newsAnnouncement {
+  height: 80vh;
+  padding: 2rem 4rem;
+}
+.newsAnnouncement p {
+  color: rgb(72, 58, 58);
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.newsAnnouncement a {
+  color: rgb(142, 7, 7);
+  font-weight: bold;
+}
+.newsAnnouncement .moreNews {
+  height: 50px;
+}
+.newsAnnouncement .moreNewsBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.newsAnnouncement .moreNewsBox .newsBlock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.newsAnnouncement .moreNewsBox .newsBlock .innerBlockB {
+  padding-left: 1rem;
+}
+
+.keybates {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(30, 26, 26);
+  color: rgb(243, 239, 239);
+  text-align: center;
+}
+.keybates p {
+  text-align: center;
+  font-size: 25px;
+}
+.keybates .keybatesbtn {
+  margin-top: 2rem;
+}
+.keybates .keybatesbtn a {
+  text-decoration: none;
+  border: 2px solid rgb(52, 107, 210);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  background-color: rgb(52, 107, 210);
+  color: rgb(243, 239, 239);
+}
+
+@media (max-width: 1100px) {
+  .academics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .academics {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: beige;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  transition: 1s ease-out;
+  transform: scale(0.8);
+}
+
+nav {
+  background-color: #881125;
+  color: #fff;
+  padding: 0.5rem 5rem;
+}
+nav .navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav #menuToggleIcon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+nav .lunverra a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.menuContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #4a0c0c;
+  padding: 2rem 3rem;
+  color: white;
+  z-index: 999;
+}
+.menuContainer .menuColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  margin-bottom: 1rem;
+}
+.menuContainer .menuColumn a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.4rem 0;
+  transition: color 0.3s ease;
+}
+.menuContainer .menuColumn a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.menuContainer .menuColumn .menuHeader {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+.menuContainer .menuColumn .menuHeader .menuHead {
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+.footerPage {
+  height: 90vh;
+  padding: 3rem 2rem 3rem 6rem;
+  background-color: #111;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.footerPage .footerblock {
+  color: beige;
+  margin-top: 3rem;
+}
+.footerPage .footerblock h2 {
+  color: beige;
+  font-weight: bolder;
+}
+.footerPage .footerblock a {
+  color: gainsboro;
+}
+.footerPage .footerblock a:hover {
+  text-decoration-color: yellow;
+}
+.footerPage .footerblock p {
+  font-size: 0.8rem;
+}
+.footerPage .footerblock .gift {
+  margin: 4rem 0rem 1rem 0rem;
+}
+.footerPage .footerblock .telphone {
+  text-decoration: none;
+}
+.footerPage .footerblock .gifIcon a i {
+  font-size: 2.5rem;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  display: inline-block;
+}
+.footerPage .footerblock .gifIcon a:nth-of-type(1) i {
+  background-color: rgb(156, 56, 89);
+}
+.footerPage .footerblock .gifIcon a:nth-of-type(2) i {
+  background-color: rgb(60, 100, 150);
+}
+.footerPage .footerblock .gifIcon a:nth-of-type(3) i {
+  background-color: rgb(93, 89, 19);
+}
+.footerPage .footerblock .gifIcon a:nth-of-type(4) i {
+  background-color: rgb(207, 72, 23);
+}
+.footerPage .footerblock .socials {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .menuContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menuContainer .menuColumn {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+.academicsImgCont {
+  height: 30vh;
+}
+.academicsImgCont img {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.academicsMainPage {
+  background-color: rgb(246, 242, 242);
+}
+.academicsMainPage .academicsMainPageDiv {
+  padding: 5rem 5rem 3rem 8rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  line-height: 2;
+}
+.academicsMainPage .firstbox h1 {
+  color: rgb(148, 6, 6);
+  font-size: 30px;
+}
+.academicsMainPage .secondbox .sap {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(148, 6, 6);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1rem;
+}
+.academicsMainPage .secondbox .sap a {
+  text-decoration: none;
+  color: #fff;
+}
+.academicsMainPage .secondbox .sap:hover {
+  background-color: rgb(116, 10, 10);
+}
+.academicsMainPage .secondbox hr {
+  height: 5px;
+  background-color: rgb(70, 63, 63);
+  border: none;
+  margin-top: -8px;
+}
+
+.topLinksCont {
+  background-color: rgb(238, 237, 237);
+  padding: 0rem 2rem;
+}
+.topLinksCont h1 {
+  color: rgb(148, 6, 6);
+  padding: 0.5rem 0rem;
+}
+.topLinksCont a {
+  color: rgb(87, 87, 230);
+}
+.topLinksCont a:hover {
+  color: rgb(181, 181, 33);
+}
+
+.coursesMainContainer {
+  background-color: rgb(246, 242, 242);
+  padding: 5rem 7rem;
+}
+.coursesMainContainer h1 {
+  color: rgb(148, 6, 6);
+  padding-bottom: 2rem;
+}
+.coursesMainContainer .courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.coursesMainContainer .courses-container .course-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.coursesMainContainer .courses-container .course-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+.coursesMainContainer .courses-container .course-card .course-content {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.coursesMainContainer .courses-container .course-card .course-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+.coursesMainContainer .courses-container .course-card .course-content button {
+  padding: 0.5rem 1rem;
+  background-color: #881125;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.coursesMainContainer .courses-container .course-card .course-content button:hover {
+  background-color: #b71735;
+}
+.coursesMainContainer .courses-container .course-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.coursesMainContainer .courses-container .course-card:hover::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.admission-container {
+  height: 100vh;
+  background-color: #333;
+}
+.admission-container .home-card {
+  padding: 1rem 5rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: url("/static/images/hercules.webp");
+}
+.admission-container .home-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.admission-container .home-card .home-header {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+.admission-container .home-card .home-header .fa-graduation-cap {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.admission-container .home-card .home-header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  padding-right: 1rem;
+}
+.admission-container .home-card .admissionTextCont {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  top: 3rem;
+  height: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 2rem;
+}
+.admission-container .home-card .admissionTextCont h1 {
+  font-size: 2.5rem;
+}
+.admission-container .home-card .admissionTextCont h1 .atLunverra {
+  color: #b30825;
+  font-weight: bolder;
+  font-size: 3rem;
+}
+.admission-container .home-card .admissionTextCont p {
+  padding: 0rem 2rem 0rem 0rem;
+  margin-bottom: 2rem;
+}
+.admission-container .home-card .admissionTextCont a {
+  padding: 0.8rem 3rem;
+  color: #d80629;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.admission-container .home-card .admissionTextCont a:hover {
+  background-color: #b30825;
+  color: #fff;
+}
+
+.applicationGuide {
+  padding: 2rem 3rem;
+}
+.applicationGuide p {
+  font-size: 1.1rem;
+}
+.applicationGuide .applicationGuideNavs h2 {
+  color: #b30825;
+  padding-top: 1.5rem;
+  font-size: 1.4rem;
+  margin-bottom: -10px;
+}
+.applicationGuide .applicationGuideNavs h3 {
+  color: #995a65;
+}
+.applicationGuide .applicationGuideNavs h5 {
+  margin: 10px 0px -10px 20px;
+}
+.applicationGuide .applicationGuideNavs .requirementsIntStudent {
+  margin-top: 3rem;
+}
+.applicationGuide .applyNow {
+  margin: 2rem 0rem;
+}
+.applicationGuide .applyNow a {
+  background-color: #b30825;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+.applicationGuide .applyNow a:hover {
+  background-color: #111;
+  color: #d80629;
+}
+
+.contactSec {
+  padding: 5rem;
+  background-color: #ffebc9;
+}
+.contactSec .contactflex {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2rem 0rem;
+}
+.contactSec .contactflex .contactus h1 {
+  color: #881125;
+  font-size: 3rem;
+}
+.contactSec .contactflex .contactus h2 {
+  color: #111;
+  font-size: 1.5rem;
+}
+.contactSec .contactflex .contactus h3 {
+  color: #881125;
+  font-weight: normal;
+}
+.contactSec .contactflex .contactus p {
+  font-size: 1.1rem;
+}
+.contactSec .contactflex .contactus .tel {
+  color: #111;
+}
+.contactSec .contactflex .contactus .mail {
+  color: #1265a4;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.contactSec .contactflex .contactus button {
+  background-color: #5D5913;
+  border: 1px solid #5D5913;
+  border-radius: 5px;
+  padding: 6px 15px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.contactSec .contactflex .contactus input {
+  outline: #5D5913;
+}
+.contactSec .contactflex .contactus input:hover {
+  border-color: rgb(227, 227, 9);
+}
+
+.nav-link {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #eee;
+  color: #000 !important;
+}
+
+.campusHero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  background-image: url("/static/images/courses english.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+.campusHero .welcomeNote {
+  background-color: black;
+  padding: 3rem;
+  margin: 30% 3rem 0rem 0rem;
+}
+.campusHero a {
+  color: #881125;
+}
+.campusHero p {
+  margin-top: 1rem;
+}
+
+.campLife {
+  padding: 3rem 8rem;
+  line-height: 1.8;
+}
+.campLife h1 {
+  font-weight: 500;
+  color: rgb(143, 4, 4);
+  font-size: 28px;
+}
+.campLife p {
+  font-size: 1.1rem;
+  opacity: 90%;
+}
+.campLife .clP1 {
+  margin-bottom: 2rem;
+}
+.campLife .mission {
+  padding: 2rem 0rem;
+}
+.campLife .mission h1 {
+  margin-bottom: 10px;
+}
+.campLife .mission h3 {
+  padding-top: 2rem;
+}
+.campLife ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.infoPage {
+  background-color: #fff;
+}
+
+.honorsCollege {
+  background-image: url(/static/images/studyabroadd.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+.honorsCollege .honorsFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5rem;
+}
+.honorsCollege .honorsFlex p {
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+.honorsCollege .honorsFlex a {
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  border: 3px solid #fff;
+  text-decoration: none;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.honorsCollege .honorsFlex a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.places {
+  padding: 2rem 5rem;
+}
+.places p {
+  font-size: 1.1rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.lunverraStudent {
+  padding: 2rem 5rem;
+}
+.lunverraStudent h2 {
+  color: #881125;
+}
+
+.majorMinor h1 {
+  font-size: 2rem;
+  padding: 1rem 0rem;
+}
+.majorMinor ul {
+  list-style: none;
+  padding: 0;
+}
+.majorMinor .courseTitle {
+  font-weight: bold;
+}
+.majorMinor .majorMinorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.majorMinor .applyBtn {
+  margin-top: 1rem;
+}
+.majorMinor .applyBtn a {
+  background-color: #111;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.majorMinor .applyBtn a:hover {
+  text-decoration: underline;
+}
+
+.resources h1 {
+  text-align: center;
+  font-weight: bolder;
+  color: #111;
+}
+.resources a {
+  text-decoration: none;
+  color: blue;
+  font-weight: 500;
+  font-size: 20px;
+}
+.resources .resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+.resources .resourceGrid a:hover {
+  text-decoration: underline;
+}
+.resources .resourceGrid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonials {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
+}
+.testimonials .testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.testimonials .testimonialGrid .testimonialCard {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.testimonials .testimonialGrid .testimonialCard:hover {
+  transform: translateY(-5px);
+}
+.testimonials .testimonialGrid .testimonialCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.testimonials .testimonialGrid .testimonialCard .studentName {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #222;
+}
+.testimonials .testimonialGrid .testimonialCard .studentProgram {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+.testimonials .testimonialGrid .testimonialCard .studentFeedback {
+  font-style: italic;
+  color: #444;
+  line-height: 1.5;
+}
+
+/*# sourceMappingURL=styles.css.map */

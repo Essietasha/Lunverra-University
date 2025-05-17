@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='images/hercules.webp') }}">
+        <title>Lunverra University {% block title %} {% endblock %}</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+
+            <nav>
+                <div class="container-fluid navContainer">
+                    <div class="menuIcon" id="menuToggleIcon" onclick="toggleMenu()">
+                        <span class="menuIcons">&#9776;</span> 
+                        <!-- <span class="menuIcons">☰</span>  -->
+                    </div>
+
+                    <div class="lunverra">
+                        <a href="/">LUNVERRA</a>
+                    </div>
+
+                    <div>
+                        <img src="/static/images/searchicon.webp" height="32px" width="32px" class="menuIcons">
+                    </div>
+                </div>
+            </nav>
+
+            <div id="menu" class="menuContainer hidden">
+                <div class="menuColumn">
+                    <p class="menuHeader"> <a href="/admission" class="menuHead">Admission</a> </p>
+                    <a href="/application">Application</a>
+                    <a href="/courseinformation">Courses & Faculty</a>
+                    <a href="#">Visit Campus</a>
+                    <a href="#">Student Financial Services</a>
+                </div>
+                <div class="menuColumn">
+                    <p class="menuHeader"> <a href="/academics" class="menuHead">Academics</a> </p>
+                    <a href="#">Calendar</a>
+                    <a href="#">Course Catalog</a>
+                    <a href="#">Resources</a>
+                </div>
+                <div class="menuColumn">
+                    <p class="menuHeader"> <a href="/campuslife" class="menuHead">Campus</a> </p>
+                    <a href="#">Dining Menu</a>
+                    <a href="#">Events</a>
+                    <a href="#">Alumni</a>
+                </div>
+                <div class="menuColumn">
+                    <p class="menuHeader"> <a href="/about" class="menuHead">About Us</a> </p>
+                    <a href="/informationcentre">Information Centre</a>
+                    <a href="/testimonials">Testimonials</a>
+                    <a href="/about">Contact</a>
+                </div>
+                {% if not session.get('user_id') %}
+                    <div class="menuColumn">
+                        <p class="menuHeader"> <a href="#" class="menuHead">Login</a> </p>
+                        <a href="/informationcentre">Sign Up</a>
+                    </div>
+                    {% else %}
+                    <div class="menuColumn">
+                        <p class="menuHeader"> <a href="#" class="menuHead">Dashboard</a> </p>
+                        <a href="/informationcentre">Logout</a>
+                    </div>
+                {% endif %}
+            </div>
+
+
+            <main class="container-fluid">
+                {% block body %}{% endblock %}
+                {% block scripts %}{% endblock %}
+            </main>
+
+            <section class="footerPage">
+                <div class="footerblock">
+                    <h2>Lunverra</h2>
+                    <br>
+                    <p>
+                        2 Alexander Road
+                        <br>
+                        Lewiston, Maine 04290
+                        <br>
+                        <a class="telphone" href="tel:+2347018454916">Phone: + 2347018454916</a>
+                    </p>
+                    <br>
+
+                    <h2 class="gift">&#9818;Make a  Gift</h2>
+
+                    <div class="gifIcon">
+                        <a href=""><i class="fa-solid fa-b giftIcons"></i></a>
+                        <a href=""><i class="fa-brands fa-amazon giftIcons"></i></a>
+                        <a href=""><i class="fa-brands fa-paypal giftIcons"></i></a>
+                        <a href=""><i class="fa-solid fa-g giftIcons"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="footerblock">
+                    <a href="">Campus Safety</a>
+                    <br><br>
+                    <a href="">Communications</a>
+                    <br><br>
+                    <a href="">Directory</a>
+                    <br><br>
+                    <a href="">Employment</a>
+                    <br><br>
+                    <a href="">Sexual Respect/Title IX</a>
+                </div>
+
+                <div class="footerblock">
+                    <a href="">A-Z Index</a>
+                    <br><br>
+                    <a href="">Privacy Policy</a>
+                    <br><br>
+                    <a href="">Questions and Feedback</a>
+                    <br><br>
+                    <a href="">Virtual Tour</a>
+                </div>
+
+                <div class="footerblock">
+                    <a href="https://facebook.com"><i class="fa-brands fa-square-facebook socials"></i></a>
+                    <a href="https://instagram.com"><i class="fa-brands fa-linkedin socials"></i></a>
+                    <a href="https://linkedin.com"><i class="fa-brands fa-youtube socials"></i></a>
+                    <a href="https://google.com"><i class="fa-brands fa-square-instagram socials"></i></a>
+                </div>
+            </section>
+
+        </div>
+    </body>
+
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        const icon = document.getElementById('menuToggleIcon');
+
+        menu.classList.toggle('hidden');
+
+        icon.innerHTML = menu.classList.contains('hidden') ? '&#9776;' : '✖';
+    }
+    </script>
+
+</html>

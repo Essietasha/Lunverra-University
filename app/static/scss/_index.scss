@@ -1,0 +1,310 @@
+@import 'variables';
+
+.mainpage {
+    height: 100vh;
+    margin: auto;
+    background-image: url(/static/images/gradmale.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding-left: 150px;
+
+    h1{
+        color: $black;
+        padding-top: 150px;
+    }
+
+    h4{
+        color: $black;
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+
+    .homeLearnMoreBtn {
+        margin-top: 4rem;
+
+        a {
+            color: rgb(183, 15, 15);
+            padding: 1rem 3.5rem;
+            border-radius: 3px;
+            background-color: $white;
+            border: 1px $white;
+            text-decoration: none;
+            font-size: 1.2rem;
+
+            &:hover{
+                color: rgb(188, 44, 44);
+                font-size: 1.1rem;
+                transition: 1s ease-out;
+                transform: scale(0.8);              
+            }
+        }
+    }
+}
+
+
+.academics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 2rem 2rem 2rem;
+    color: $white;
+
+    .block {
+        height: 500px;
+        padding: 1rem;
+        text-align: center;
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+            position: relative; 
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                // background-color: rgba(0, 0, 0, 0.1); 
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+
+        &:nth-child(1){
+            background-image: url(/static/images/gradmale.webp);
+
+            &::before {
+                    background-color: rgba(2, 49, 69, 0.4);
+            }
+        }
+
+        &:nth-child(2){
+            background-image: url(/static/images/academicprog.webp);
+        
+            &::before {
+                background-color: rgba(93, 89, 19, 0.4);
+            }
+        }
+
+        &:nth-child(3){
+            background-image: url(/static/images/jenkins.webp);
+
+            &::before {
+                background-color: rgba(10, 93, 128, 0.4);
+            }
+        }
+
+        &:nth-child(4){
+            background-image: url(/static/images/camptours.webp);
+
+            &::before {
+                background-color: rgba(60, 1, 11, 0.4);
+            }
+        }
+
+        h2{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        hr {
+            width: 80%;
+            height: 0.8px;
+            background-color: black;
+            border: none;
+            margin-top: 1.5rem;
+            margin-left: 1.2rem;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: larger;
+            text-align: center;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            color: rgb(193, 16, 16);
+            border: none;
+            margin-bottom: 10px;
+        }
+        
+        .imgConts{
+            @include flexCenter();
+            height: 30%;
+
+            img{
+                height: 120px;
+                width: 120px;
+                background-size: cover;
+                border-radius: 50%;
+            }
+        }
+        
+        .textConts{
+            height: 55%;
+
+            p{
+                font-size: 1rem;
+            }
+        }
+
+        .academicsbtn{
+            height: 15%;
+            margin-top: 10px;
+
+            a {
+                color: rgb(183, 15, 15);
+                border-radius: 3px;
+                background-color: $white;
+                border: 1px $white;
+                text-decoration: none;
+                padding: 0.5rem 1.5rem;
+
+                &:hover{
+                    color: rgb(188, 44, 44);
+                    transition: 1s ease-out;
+                    transform: scale(0.8);              
+                }
+            }
+        }
+    }
+
+}
+
+.divider{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    background-color: $navColor;
+}
+
+.grad{
+    width: 100%;
+    height: 90vh;
+    margin: auto;
+    background-image: url(/static/images/Grad.webp);
+    background-size: contain;
+    padding-top: 15rem;
+
+    .date{
+        width: 90%;
+        height: 30px;
+        margin: auto;
+
+        p{
+            color: rgb(231, 231, 24);
+            font-size: 1rem;
+        }
+    }
+
+    .generosity {
+        padding: 0rem 3rem;
+        margin: auto;
+        
+        p{
+            color:rgb(247, 247, 213);
+            padding-top: 30px;
+            font-family: sans-serif;
+        }
+
+        a {
+            color: $white;
+            font-size: 3rem;
+            font-weight: 550;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+
+            &:visited{
+                color: white;
+            }
+
+            &:hover{
+                color: pink;
+            }
+        }
+    }
+}
+
+
+.newsAnnouncement {
+    height: 80vh;
+    padding: 2rem 4rem;
+
+    p {
+        color: rgb(72, 58, 58);
+        font-family:sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        padding-bottom: 1rem;
+    }
+
+    a{
+        color: rgb(142, 7, 7);
+        font-weight: bold;
+    }
+
+    .moreNews {
+        height: 50px;
+    }
+
+    .moreNewsBox {
+        @include gridCenter();
+        padding-top: 1rem;
+
+        .newsBlock{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .innerBlockB{
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+.keybates {
+    height: 400px;
+    @include flexCenter();
+    background-color: rgb(30, 26, 26);
+    color: rgb(243, 239, 239);
+    text-align: center;
+
+    p{
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .keybatesbtn{
+        margin-top: 2rem;
+
+        a {
+            text-decoration: none;
+            border: 2px solid rgb(52, 107, 210);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            background-color:rgb(52, 107, 210);
+            color: rgb(243, 239, 239);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+  .academics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .academics {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Campus Life
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #111; height: 70px;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100 d-flex justify-content-evenly text-center align-items-stretch mb-0">
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Home</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Libraries</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Housing</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Dining</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Health & Safety</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Events</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Club</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                <a class="nav-link text-white h-100 d-flex align-items-center justify-content-center px-3" href="#">Staff</a>
+                </li>
+                <li class="nav-item dropdown d-flex align-items-center">
+                <a class="nav-link dropdown-toggle text-white h-100 d-flex align-items-center justify-content-center px-3"
+                    href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Administrative
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Admissions</a></li>
+                    <li><a class="dropdown-item" href="#">Fees & Payments</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Registrar’s Office</a></li>
+                </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="campusHero">
+        <div></div>
+        <div class="welcomeNote">
+            <h1>
+                Welcome to our Campus 
+            </h1>
+            <p>Your journey starts 
+                <span> 
+                    <a href="#campLifePg">here.</a>
+                </span>
+                Your experiences outside of the classroom make your college years unforgettable. Learn to live away from home, join a student organization, take a campus rec trip, attend a concert or comedy show, work out in the fitness center, or enjoy dinner with friends. There’s always something to do at Lunverra.
+            </p>
+        </div>
+    </section>
+
+    <section class="campLife" id="campLifePg">
+        <div>
+            <h1>Campus Life</h1>
+            <p class="clP1">
+                Campus Life is excited to work with you this academic year!
+            </p>
+            <p>
+                Campus Life supports student clubs, organizations, the First-Year Experience, social programming, and leadership development. Please feel free to stop by during our office hours between 9:30am and 5:00pm. We are located on the ground floor of Chase Hall, in suite G03. Staff members are often out and about on campus connecting with students and staff, coordinating programs and events, and attending meetings. You can also each out to us if you would like to schedule a meeting or need assistance.
+            </p>
+            <div>
+                <p>
+                    For General Campus Life Inquiries, email <a href="mailto:olukoyaesther234@gmail.com">our mail</a> or call +2347018454916
+                </p>
+                <p>
+                    Otherwise, <a href="">check out this page</a> for contact info of specific staff members.
+                </p>
+            </div>
+        </div>
+
+        <div class="mission">
+            <h1>Our Mission</h1>
+            <p>
+                Reflecting <a href="">Lunverra Institutional Plan</a>, Campus Life plays an integral role in the education of the whole person, a “process through which students become aware of their interests, community, and purpose in the world.” We deepen the student experience by providing resources and opportunities to explore interests through involvement in
+                <a href=""> student clubs and organizations, social events and programs</a>, first-year experience programs, leadership development workshops, and employment opportunities. An equity and inclusion lens is foundational to our work – we actively aspire to dismantle -isms and -phobias, and partner with students to do the same in their areas of influence. To ensure an inclusive and accessible experience for all, Campus Life student clubs and organizations embody this mission by abiding by the <a href=""> Club/Org Membership Policy.</a> 
+            </p>
+            <h3>Laedership Development</h3>
+            <p>
+                Campus Life embeds the <a href=""> Lunverra Lead</a> framework into our student employment positions and in orientation sessions designed to provide student clubs and organizations with leadership skills to achieve their individual and collective goals.
+                The mission of Lunverra Leads is to support students and staff in understanding and cultivating leadership as the act of taking responsibility for solving a problem or achieving a goal. With a shared set of guiding principles and ample opportunity for practice and self-reflection, Brook Leads enable diverse students and staff to develop the concepts and skills to create positive change in their own lives and the lives of others.
+                The <a href="">Lunverra Lead </a>  framework is based on the Social Change Model of leadership and includes the <a href="#7cs">7C’s</a> or capacities, that ultimately lead to an 8th C or capacity: Change.
+            </p>
+        </div>
+
+        <div class="sevencs" id="7cs">
+            <h3>The 7Cs are:</h3>
+            <ul>
+                <li>Consciousness of Self</li>
+                <li>Congruence</li>
+                <li>Commitment</li>
+                <li>Collaboration</li>
+                <li>Common Purpose</li>
+                <li>Controversy</li>
+                <li>Civic Agency</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+{% include "contact.html" %}
+
+{% endblock %}

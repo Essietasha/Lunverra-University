@@ -1,0 +1,74 @@
+@import 'variables';
+
+.nav-link {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #eee;
+    color: #000 !important;
+}
+
+.campusHero{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    background-image: url('/static/images/courses english.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: $white;
+    overflow: hidden;
+
+    .welcomeNote{
+        background-color: black;
+        padding: 3rem;
+        margin: 30% 3rem 0rem 0rem;
+    }
+
+    a{
+        color: #881125;
+    }
+
+    p{
+        margin-top: 1rem;
+    }
+}
+
+.campLife {
+    padding: 3rem 8rem;
+    line-height: 1.8;
+
+    h1 {
+        font-weight:500;
+        color: rgb(143, 4, 4);
+        font-size: 28px;
+    }
+    p{
+        font-size: 1.1rem;
+        opacity: 90%;
+    }
+
+    .clP1{
+        margin-bottom: 2rem;
+    }
+
+    .mission{
+        padding: 2rem 0rem;
+        
+        h1{
+            margin-bottom: 10px;
+        }
+
+        h3{
+            padding-top: 2rem;
+        }
+
+    }
+
+    ul{
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}

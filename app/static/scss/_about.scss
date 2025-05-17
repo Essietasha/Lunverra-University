@@ -1,0 +1,80 @@
+@import 'variables';
+
+.nav-about{
+    height: 50px;
+    background-color: #ffebc9;
+    padding: 1rem 4rem;
+
+    .navicons{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        a{
+            &:nth-child(1){
+                margin-left: 10rem;
+            }
+
+            &:nth-child(2){
+                color: rgb(184, 52, 4);
+                font-size: 0.8rem;
+                text-decoration: none;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+.found{
+    padding: 4rem 4rem 2rem 4rem;
+    text-align: center;
+    background-color: rgb(248, 252, 255);
+
+    p{
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+    }
+    
+}
+.aboutSec {
+    background-color: rgb(248, 252, 255);
+    padding: 2rem 5rem;
+
+    .aboutGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+
+        .boxes {
+            background-color: #e1e1e1;
+            height: 450px;
+
+            h3 {
+                border: 20px solid #4B5763;
+                background-color: #4B5763;
+                color: #FFF;
+                font-weight: 300;
+                padding-left: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            p{
+                padding: 1rem;
+                font-size: 1rem;
+                opacity: 90%;
+            }
+
+            a {
+                line-height: 2.0;
+                color: #0C75A1;
+            }
+
+            ul {
+                color: #698088;
+            }
+        }
+    }
+}

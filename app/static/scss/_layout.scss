@@ -1,0 +1,185 @@
+@import 'variables';
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: beige;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+
+    &:hover {
+        transition: 1s ease-out;
+        transform: scale(0.8);
+    }
+}
+
+nav{
+    background-color: $navColor;
+    color: $white;
+    padding: 0.5rem 5rem;
+
+    .navContainer{
+        @include flexSB();
+    }
+
+    #menuToggleIcon {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .lunverra{
+
+        a{
+            text-decoration: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: $white;
+            font-weight: bold;
+        }
+    }
+}
+
+.menuContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #4a0c0c;
+    padding: 2rem 3rem;
+    color: white;
+    z-index: 999;
+
+    .menuColumn {
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+        margin-bottom: 1rem;
+
+        a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0.4rem 0;
+            transition: color 0.3s ease;
+
+            &:hover{
+                color: white;
+                text-decoration: underline;
+            }
+        }
+
+        .menuHeader {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+
+            .menuHead{
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.hidden {
+  display: none;
+}
+
+
+.footerPage {
+    height: 90vh;
+    padding: 3rem 2rem 3rem 6rem;
+    background-color: $black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+
+    .footerblock {
+        color: beige;
+        margin-top: 3rem;
+
+        h2{
+            color: beige;
+            font-weight: bolder;
+        }
+
+        a{
+            color: gainsboro;
+ 
+            &:hover {
+            text-decoration-color: yellow;
+            }
+        }
+
+        p{
+            font-size: 0.8rem;
+        }
+
+        .gift{
+            margin: 4rem 0rem 1rem 0rem;
+        }
+
+        .telphone{
+            text-decoration: none;
+        }
+        
+        .gifIcon {
+
+            a{
+
+                i {
+                    font-size: 2.5rem;
+                    border-radius: 50%;
+                    padding: 10px;
+                    margin: 5px;
+                    color: white;
+                    display: inline-block;
+                }
+            }
+            a:nth-of-type(1) i {
+                background-color: rgb(156, 56, 89);
+            }
+        
+            a:nth-of-type(2) i {
+                background-color: rgb(60, 100, 150);
+            }
+
+            a:nth-of-type(3) i {
+                background-color: rgb(93, 89, 19);
+            }
+
+            a:nth-of-type(4) i {
+                background-color: rgb(207, 72, 23);
+            }
+        }
+
+
+        .socials {
+            font-size: 2rem;
+            margin-left: 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+  .menuContainer {
+    flex-direction: column;
+    align-items: flex-start;
+
+        .menuColumn {
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+    }
+}

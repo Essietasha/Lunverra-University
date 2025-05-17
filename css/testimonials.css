@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+.testimonials {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
+}
+.testimonials .testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.testimonials .testimonialGrid .testimonialCard {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.testimonials .testimonialGrid .testimonialCard:hover {
+  transform: translateY(-5px);
+}
+.testimonials .testimonialGrid .testimonialCard img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.testimonials .testimonialGrid .testimonialCard .studentName {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #222;
+}
+.testimonials .testimonialGrid .testimonialCard .studentProgram {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+.testimonials .testimonialGrid .testimonialCard .studentFeedback {
+  font-style: italic;
+  color: #444;
+  line-height: 1.5;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+$white: #fff;
+$black: #111;
+$navColor: #881125;
+
+// .bg-colr{
+//     background-color: #92c3f3;
+//     background-color:  rgb(162, 190, 206);
+//     background-color: #ffebc9;
+//     background-color: #ffb49d;
+// }
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin gridCenter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@mixin flexSB {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

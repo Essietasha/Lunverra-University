@@ -1,0 +1,60 @@
+
+.contactSec{
+    padding: 5rem;
+    background-color: #ffebc9;
+
+    .contactflex{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 2rem 0rem;
+
+        .contactus{
+
+            h1{
+                color: $navColor;
+                font-size: 3rem;
+            }
+
+            h2{
+                color: $black;
+                font-size: 1.5rem;
+            }
+            h3{
+                color: $navColor;
+                font-weight: normal;
+            }
+
+            p{
+                font-size: 1.1rem;
+            }
+            
+            .tel{
+                color: $black;
+            }
+            
+            .mail{
+                color: #1265a4;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            button{
+                background-color: #5D5913;
+                border: 1px solid #5D5913;
+                border-radius: 5px;
+                padding: 6px 15px;
+                color: $white;
+                font-size: 0.8rem;
+            }
+
+            input{
+                outline: #5D5913;
+
+                &:hover{
+                    border-color: rgb(227, 227, 9);
+                }
+            }
+        }
+    }
+}
