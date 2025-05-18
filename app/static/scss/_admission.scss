@@ -85,10 +85,18 @@
 }
 
 .applicationGuide{
-    padding: 2rem 3rem;
+    padding: 2rem 6rem;
+
+    h1{
+        margin: 2rem 0rem 1rem 0rem;
+    }
 
     p{
         font-size: 1.1rem;
+    }
+
+    ul{
+        padding-left: 1rem;
     }
 
     .applicationGuideNavs{
@@ -97,15 +105,18 @@
             color: #b30825;
             padding-top: 1.5rem;
             font-size: 1.4rem;
-            margin-bottom: -10px;
         }
 
         h3{
             color: #995a65;
         }
 
+        h4{
+            margin-top: 1rem;
+        }
+
         h5{
-            margin: 10px 0px -10px 20px;
+            margin: 10px 0px 0px 0px;
         }
 
         .requirementsIntStudent{
@@ -122,10 +133,11 @@
             text-decoration: none;
             padding: 0.5rem 2rem;
             transition: background-color 1s ease-in-out, color 1s ease-in-out;
+            border-radius: 3px;
 
             &:hover{
                 background-color: $black;
-                color: #d80629;
+                color: #fff;
             }
         }
     }

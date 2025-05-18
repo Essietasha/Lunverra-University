@@ -17,6 +17,10 @@ def index():
 def about():
     return render_template("about.html")
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 @app.route("/courseInformation")
 def courseInformation():
     return render_template("courseinformation.html")
@@ -52,3 +56,15 @@ def testimonials():
 @app.route("/studentfinancialservices")
 def studentfinancialservices():
     return render_template("sfs.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    return render_template("logout.html")
+
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")

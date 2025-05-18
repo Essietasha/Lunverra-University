@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Lunverra Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='images/hercules.webp') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="loginCont">
+
+            <!-- Bubbles -->
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+
+            <!-- Navbar -->
+            <header>
+                <div class="logo">
+                    <a href="/">Lunverra</a>
+                </div>
+                <nav class="loginNav">
+                    <a href="/">HOME</a>
+                    <a href="/about">ABOUT US</a>
+                    <a href="/about">CONTACT</a>
+                </nav>
+            </header>
+
+            <!-- Login Card -->
+            <div class="login-container">
+                <h2>Sign Up</h2>
+
+                <div class="input-group">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password">
+                </div>
+
+                <button class="login-btn">Sign Up</button>
+
+                <div class="signup-link">
+                    Already have an account? <a href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

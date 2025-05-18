@@ -65,13 +65,13 @@
                 </div>
                 {% if not session.get('user_id') %}
                     <div class="menuColumn">
-                        <p class="menuHeader"> <a href="#" class="menuHead">Login</a> </p>
-                        <a href="/informationcentre">Sign Up</a>
+                        <p class="menuHeader"> <a href="/login" class="menuHead">Login</a> </p>
+                        <a href="/signup">Sign Up</a>
                     </div>
                     {% else %}
                     <div class="menuColumn">
-                        <p class="menuHeader"> <a href="#" class="menuHead">Dashboard</a> </p>
-                        <a href="/informationcentre">Logout</a>
+                        <p class="menuHeader"> <a href="/dashboard" class="menuHead">Dashboard</a> </p>
+                        <a href="/logout">Logout</a>
                     </div>
                 {% endif %}
             </div>
