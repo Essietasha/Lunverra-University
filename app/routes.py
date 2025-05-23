@@ -57,6 +57,26 @@ def testimonials():
 def studentfinancialservices():
     return render_template("sfs.html")
 
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
+
+@app.route("/campussafety")
+def campussafety():
+    return render_template("campussafety.html")
+
+@app.route("/communications")
+def communications():
+    return render_template("communications.html")
+
+@app.route("/employment")
+def employment():
+    return render_template("employments.html")
+
+@app.route("/faqs")
+def faqs():
+    return render_template("faqs.html")
+
 @app.route("/login")
 def login():
     return render_template("login.html")

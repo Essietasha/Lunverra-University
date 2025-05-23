@@ -6,7 +6,14 @@
 
 {% block body %}
 
-<section class="academicsImgCont">
+{% set image_src = url_for('static', filename='images/close-up-people-studying-library.webp') %}
+{% set alt_text = "Academics" %}
+{% set link_url = url_for('about') %}
+{% set link_text = "About Lunverra" %}
+
+{% include "hero.html" %}
+
+<!-- <section class="academicsImgCont">
     <img src="/static/images/close-up-people-studying-library.webp" alt="Academics">
 </section>
 
@@ -16,7 +23,7 @@
         <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
         <a href="/about">About Lunverra</a>
     </div>
-</section>
+</section> -->
 
 
 <section class="academicsMainPage">

@@ -24,18 +24,17 @@
 
         a {
             color: rgb(183, 15, 15);
-            padding: 1rem 3.5rem;
+            padding: 1rem 3rem;
             border-radius: 3px;
             background-color: $white;
             border: 1px $white;
             text-decoration: none;
             font-size: 1.2rem;
+            transition: 1s ease-in-out;
 
             &:hover{
                 color: rgb(188, 44, 44);
                 font-size: 1.1rem;
-                transition: 1s ease-out;
-                transform: scale(0.8);              
             }
         }
     }

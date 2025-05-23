@@ -6,7 +6,7 @@
 
 .loginCont {
   font-family: 'Inter', sans-serif;
-  background-color: pink;
+  background-color: rgb(215, 215, 162);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,19 +37,20 @@ header {
 }
 
 .loginNav{
-    background-color: pink;
+    background-color: rgb(215, 215, 162);
 }
 
 nav a {
   margin-left: 25px;
   text-decoration: none;
   font-weight: 500;
-  color: #fff;
+  color: #111;
   transition: color 0.3s;
+  font-weight: bold;
 }
 
 nav a:hover {
-  color: #111;
+  color: #fff;
   font-weight: bold;
 }
 

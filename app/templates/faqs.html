@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Campus Safety
+{% endblock %}
+
+{% block body %}
+<div class="sfs">
+    
+    <div class="bgColor">
+        <div class="sfsHeader"></div>
+
+        <div class="nav-about">
+            <div class="navicons">
+                <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
+                <a href="/about">Admission</a>
+            </div>
+        </div>
+
+        <div class="sfsMainContainer">
+
+            <div class="affordingLunverra">
+                <h1>FAQs</h1>
+                <hr>
+                <p>
+                    General feedback and questions about Bates College can be shared with us through this form.
+                </p>
+
+                <p>
+                    If you would like to study at Bates or are looking for scholarship or financial aid information, view our <a href="/admission">Admissions</a> page or <a href="/studentfinancialservices">Financial Services</a> page. To reach a specific Bates office or department, you may want to start with our <a href="/campuslife">listing of academic departments/programs, offices, and sports teams,</a> or our <a href="/azindex">A-Z Index</a>.
+                </p>
+
+                <details>
+                    <summary>How do I apply to the university?</summary>
+                    <p>You can apply online through our official application portal or via common platforms like the Common App or UCAS (if applicable). Check our <a href="/admission">Admissions page</a> for deadlines, required documents, and application steps.</p>
+                </details>
+
+                <details>
+                    <summary>Is financial aid or scholarships available?</summary>
+                    <p>The Department of Campus Safety is 24 hour, 365-day service oriented department with the mission of providing a safe and secure environment for all those on our campus, and leading by example, through education, and enforcement.</p>
+                </details>
+
+                <details>
+                    <summary>Can international students apply?</summary>
+                    <p>Absolutely. We welcome students from around the world. International applicants should refer to the <a href="/admission">International Students</a> section for visa information, English language requirements, and application procedures.</p>
+                </details>
+
+                <details>
+                    <summary>What is campus life like?</summary>
+                    <p>Campus life is vibrant and diverse with over 100 student clubs, cultural events, sports, and student-led initiatives. Our <a href="/campuslife">Student Life</a> page has more details on housing, dining, and extracurriculars.</p>
+                </details>
+
+                <details>
+                    <summary>What support services are available for students?</summary>
+                    <p>We provide academic advising, career counseling, mental health support, accessibility services, and tutoring. Our goal is to help you thrive both academically and personally.</p>
+                </details>
+
+                <details>
+                    <summary>How do I schedule a campus visit or virtual tour?</summary>
+                    <p>You can book a guided campus tour or attend a virtual information session through our <a href="/">Visit Us</a> page. We encourage prospective students to explore the campus before applying.</p>
+                </details>
+            </div>
+
+    </div>
+</div>
+
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">We value your feedback</h4>
+        </div>
+
+        <div class="card-body">
+          <form method="POST" action="/faqs">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <div class="text-end">
+              <button type="submit" class="btn btn-dark">Send Feedback</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "contact.html" %}
+
+{% endblock %}

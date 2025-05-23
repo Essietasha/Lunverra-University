@@ -42,26 +42,25 @@
                     <p class="menuHeader"> <a href="/admission" class="menuHead">Admission</a> </p>
                     <a href="/application">Application</a>
                     <a href="/courseinformation">Courses & Faculty</a>
-                    <a href="#">Visit Campus</a>
+                    <a href="/">Visit Campus</a>
                     <a href="/studentfinancialservices">Student Financial Services</a>
                 </div>
                 <div class="menuColumn">
                     <p class="menuHeader"> <a href="/academics" class="menuHead">Academics</a> </p>
-                    <a href="#">Calendar</a>
-                    <a href="#">Course Catalog</a>
-                    <a href="#">Resources</a>
+                    <a href="/">Calendar</a>
+                    <a href="/">Course Catalog</a>
+                    <a href="/">Resources</a>
                 </div>
                 <div class="menuColumn">
                     <p class="menuHeader"> <a href="/campuslife" class="menuHead">Campus</a> </p>
-                    <a href="#">Dining Menu</a>
-                    <a href="#">Events</a>
-                    <a href="#">Alumni</a>
+                    <a href="/">Dining Menu</a>
+                    <a href="/">Events</a>
+                    <a href="/">Alumni</a>
                 </div>
                 <div class="menuColumn">
                     <p class="menuHeader"> <a href="/about" class="menuHead">About Us</a> </p>
                     <a href="/informationcentre">Information Centre</a>
                     <a href="/testimonials">Testimonials</a>
-                    <a href="/about">Contact</a>
                 </div>
                 {% if not session.get('user_id') %}
                     <div class="menuColumn">
@@ -85,7 +84,6 @@
             <section class="footerPage">
                 <div class="footerblock">
                     <h2>Lunverra</h2>
-                    <br>
                     <p>
                         2 Alexander Road
                         <br>
@@ -93,46 +91,41 @@
                         <br>
                         <a class="telphone" href="tel:+2347018454916">Phone: + 2347018454916</a>
                     </p>
-                    <br>
 
                     <h2 class="gift">&#9818;Make a  Gift</h2>
 
                     <div class="gifIcon">
-                        <a href=""><i class="fa-solid fa-b giftIcons"></i></a>
-                        <a href=""><i class="fa-brands fa-amazon giftIcons"></i></a>
-                        <a href=""><i class="fa-brands fa-paypal giftIcons"></i></a>
-                        <a href=""><i class="fa-solid fa-g giftIcons"></i></a>
+                        <a href="/"><i class="fa-solid fa-b giftIcons"></i></a>
+                        <a href="/"><i class="fa-brands fa-amazon giftIcons"></i></a>
+                        <a href="/"><i class="fa-brands fa-paypal giftIcons"></i></a>
+                        <a href="/"><i class="fa-solid fa-g giftIcons"></i></a>
                     </div>
 
                 </div>
 
                 <div class="footerblock">
-                    <a href="">Campus Safety</a>
-                    <br><br>
-                    <a href="">Communications</a>
-                    <br><br>
-                    <a href="">Directory</a>
-                    <br><br>
-                    <a href="">Employment</a>
-                    <br><br>
-                    <a href="">Sexual Respect/Title IX</a>
+                    <ul>
+                        <li><a href="/campuslife">Campus Life</a></li>
+                        <li><a href="/campussafety">Campus Safety</a></li>
+                        <li><a href="/communications">Communications</a></li>
+                        <li><a href="/studentfinancialservices">Financial Services</a></li>
+                    </ul>
                 </div>
 
                 <div class="footerblock">
-                    <a href="">A-Z Index</a>
-                    <br><br>
-                    <a href="">Privacy Policy</a>
-                    <br><br>
-                    <a href="">Questions and Feedback</a>
-                    <br><br>
-                    <a href="">Virtual Tour</a>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/faqs">Questions and Feedback</a></li>
+                        <li><a href="/employment">Employment</a></li>
+                        <li><a href="/">Virtual Tour</a></li>
+                    </ul>
                 </div>
 
                 <div class="footerblock">
-                    <a href="https://facebook.com"><i class="fa-brands fa-square-facebook socials"></i></a>
-                    <a href="https://instagram.com"><i class="fa-brands fa-linkedin socials"></i></a>
-                    <a href="https://linkedin.com"><i class="fa-brands fa-youtube socials"></i></a>
-                    <a href="https://google.com"><i class="fa-brands fa-square-instagram socials"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook socials"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin socials"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube socials"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-square-instagram socials"></i></a>
                 </div>
             </section>
 

@@ -237,18 +237,17 @@
 }
 .mainpage .homeLearnMoreBtn a {
   color: rgb(183, 15, 15);
-  padding: 1rem 3.5rem;
+  padding: 1rem 3rem;
   border-radius: 3px;
   background-color: #fff;
   border: 1px #fff;
   text-decoration: none;
   font-size: 1.2rem;
+  transition: 1s ease-in-out;
 }
 .mainpage .homeLearnMoreBtn a:hover {
   color: rgb(188, 44, 44);
   font-size: 1.1rem;
-  transition: 1s ease-out;
-  transform: scale(0.8);
 }
 
 .academics {
@@ -525,6 +524,9 @@ nav .lunverra a {
   color: #fff;
   font-weight: bold;
 }
+nav .lunverra a:hover {
+  color: #fff;
+}
 
 .menuContainer {
   display: flex;
@@ -581,14 +583,23 @@ nav .lunverra a {
   color: beige;
   font-weight: bolder;
 }
-.footerPage .footerblock a {
-  color: gainsboro;
+.footerPage .footerblock ul li {
+  list-style: none;
+  line-height: 2.2rem;
 }
-.footerPage .footerblock a:hover {
+.footerPage .footerblock ul li a {
+  color: gainsboro;
+  text-decoration: none;
+}
+.footerPage .footerblock ul li a:hover {
+  text-decoration: underline;
   text-decoration-color: yellow;
 }
 .footerPage .footerblock p {
   font-size: 0.8rem;
+}
+.footerPage .footerblock a {
+  color: #fff;
 }
 .footerPage .footerblock .gift {
   margin: 4rem 0rem 1rem 0rem;
@@ -631,17 +642,6 @@ nav .lunverra a {
     margin-bottom: 1.5rem;
   }
 }
-.academicsImgCont {
-  height: 30vh;
-}
-.academicsImgCont img {
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .academicsMainPage {
   background-color: rgb(246, 242, 242);
 }
@@ -1191,13 +1191,19 @@ nav .lunverra a {
   font-size: 4rem;
 }
 .sfs .bgColor .sfsMainContainer {
-  padding: 3rem 8rem;
+  padding: 3rem 10rem;
+}
+.sfs .bgColor .sfsMainContainer .affordingLunverra p {
+  font-size: 1.1rem;
 }
 .sfs .bgColor .sfsMainContainer .affordingLunverra h1 {
   color: #881125;
 }
 .sfs .bgColor .sfsMainContainer .affordingLunverra h5 {
-  padding-right: 5rem;
+  padding: 1rem 5rem 0rem 0rem;
+}
+.sfs .bgColor .sfsMainContainer .affordingLunverra .bobcats {
+  font-size: 2rem;
 }
 .sfs .bgColor .sfsMainContainer .affordingLunverra ul {
   margin-top: 1rem;
@@ -1205,6 +1211,16 @@ nav .lunverra a {
 }
 .sfs .bgColor .sfsMainContainer .affordingLunverra ul li {
   margin-top: 0.5rem;
+}
+.sfs .bgColor .sfsMainContainer .affordingLunverra details {
+  background-color: #d2cfcf;
+  padding: 2rem;
+  border: 2px solid #881125;
+  margin-top: 2rem;
+}
+.sfs .bgColor .sfsMainContainer .affordingLunverra details summary {
+  color: #881125;
+  padding-bottom: 1rem;
 }
 .sfs .bgColor .sfsMainContainer .abtLunverra h1 {
   margin-top: 3rem;
@@ -1237,6 +1253,17 @@ nav .lunverra a {
   width: 400px;
 }
 
+.academicsImgCont {
+  height: 30vh;
+}
+.academicsImgCont img {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1245,7 +1272,7 @@ nav .lunverra a {
 
 .loginCont {
   font-family: "Inter", sans-serif;
-  background-color: pink;
+  background-color: rgb(215, 215, 162);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1273,19 +1300,20 @@ header {
 }
 
 .loginNav {
-  background-color: pink;
+  background-color: rgb(215, 215, 162);
 }
 
 nav a {
   margin-left: 25px;
   text-decoration: none;
   font-weight: 500;
-  color: #fff;
+  color: #111;
   transition: color 0.3s;
+  font-weight: bold;
 }
 
 nav a:hover {
-  color: #111;
+  color: #fff;
   font-weight: bold;
 }
 

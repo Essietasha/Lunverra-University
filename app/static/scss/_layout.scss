@@ -46,6 +46,10 @@ nav{
             cursor: pointer;
             color: $white;
             font-weight: bold;
+
+            &:hover{
+                color: #fff;
+            }
         }
     }
 }
@@ -113,16 +117,30 @@ nav{
             font-weight: bolder;
         }
 
-        a{
-            color: gainsboro;
- 
-            &:hover {
-            text-decoration-color: yellow;
+        ul{
+
+            li{
+                list-style: none;
+                line-height: 2.2rem;
+
+                a{
+                    color: gainsboro;
+                    text-decoration: none;
+        
+                    &:hover {
+                        text-decoration: underline;
+                        text-decoration-color: yellow;
+                    }
+                }
             }
         }
 
         p{
             font-size: 0.8rem;
+        }
+
+        a{
+            color: #fff;
         }
 
         .gift{
