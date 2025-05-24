@@ -7,10 +7,17 @@
 {% block body %}
 
 
-<div class="sfs">
+<div class="extras">
     
     <div class="bgColor">
-        <div class="sfsHeader">
+        
+        {% set background_image = url_for('static', filename='images/lunvStudents1.webp') %}
+        {% set heading = "Communications" %}
+        {% set linkurl = url_for('academics') %}
+        {% set alttext = "Academics" %}
+        {% include "heroii.html" %}
+
+        <!-- <div class="extrasHeader">
             <h1>Communications and Marketing</h1>
         </div>
 
@@ -19,9 +26,9 @@
                 <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
                 <a href="/academics">Academics</a>
             </div>
-        </div>
+        </div> -->
 
-        <div class="sfsMainContainer">
+        <div class="extrasMainContainer">
 
             <div class="affordingLunverra">
                 <h1>Welcome</h1>

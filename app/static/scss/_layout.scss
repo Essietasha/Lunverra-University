@@ -100,8 +100,7 @@ nav{
 
 
 .footerPage {
-    height: 90vh;
-    padding: 3rem 2rem 3rem 6rem;
+    padding: 4rem 2rem 3rem 6rem;
     background-color: $black;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -198,6 +197,60 @@ nav{
         .menuColumn {
             width: 100%;
             margin-bottom: 1.5rem;
+        }
+    }
+}
+
+@media (max-width:600px) {
+
+    nav{
+        padding: 0.5rem 2rem;
+
+        #menuToggleIcon {
+            font-size: 1.5rem;
+        }
+
+        .lunverra{
+
+            a{
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .footerPage {
+        padding: 1rem;
+        display: block;;
+
+        .footerblock {
+            margin-top: 1rem;
+
+            ul{
+                padding: 0;
+                li{
+                    line-height: 1.8rem;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .gift{
+                margin-top: 3rem;
+            }
+
+            .gifIcon {
+
+                a{
+                    i {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+
+
+            .socials {
+                font-size: 1.6rem;
+                margin-left: 0px;
+            }
         }
     }
 }

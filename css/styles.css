@@ -148,6 +148,66 @@
   padding: 1rem 0rem;
 }
 
+@media (max-width: 600px) {
+  .CourseInfoPage .CourseInfoPageTextEl p {
+    font-size: 3rem;
+  }
+  .CourseInfoPageSecII {
+    line-height: 2rem;
+    font-size: 1rem;
+    padding: 6rem 2rem;
+  }
+  .openMindedSec {
+    height: 90vh;
+    display: block;
+    padding: 2rem;
+  }
+  .openMindedSec .openMindedTextEl h2 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .openMindedSec .openMindedTextEl p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+  .openMindedSec .openMindedTextEl .acadmeicsDiv a {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+  .batesStudent {
+    line-height: 1.5rem;
+    padding: 3rem 2rem;
+  }
+  .batesStudent h2 {
+    font-size: 1.8rem;
+    padding: 2rem 0rem;
+  }
+  .batesStudent p {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .coursesContainer {
+    line-height: 1.5rem;
+    padding: 1rem;
+  }
+  .coursesContainer .minorAndMajor {
+    padding-left: 1rem;
+  }
+  .coursesContainer .minorAndMajor h1 {
+    font-size: 1.5rem;
+  }
+  .coursesContainer .minorAndMajor p {
+    font-weight: 600;
+  }
+  .coursesContainer .majorCourses {
+    display: block;
+    padding: 1rem;
+    line-height: 2rem;
+  }
+  .coursesContainer .majorCourses ul {
+    padding: 0rem;
+  }
+}
 .nav-about {
   height: 50px;
   background-color: #ffebc9;
@@ -374,12 +434,12 @@
 }
 
 .grad {
-  width: 100%;
-  height: 90vh;
   margin: auto;
   background-image: url(/static/images/Grad.webp);
-  background-size: contain;
-  padding-top: 15rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15rem 0rem 2rem 0rem;
+  overflow: hidden;
 }
 .grad .date {
   width: 90%;
@@ -413,7 +473,6 @@
 }
 
 .newsAnnouncement {
-  height: 80vh;
   padding: 2rem 4rem;
 }
 .newsAnnouncement p {
@@ -426,9 +485,6 @@
 .newsAnnouncement a {
   color: rgb(142, 7, 7);
   font-weight: bold;
-}
-.newsAnnouncement .moreNews {
-  height: 50px;
 }
 .newsAnnouncement .moreNewsBox {
   display: grid;
@@ -446,7 +502,7 @@
 }
 
 .keybates {
-  height: 400px;
+  padding: 10rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -476,6 +532,68 @@
   }
 }
 @media (max-width: 600px) {
+  .mainpage {
+    padding-left: 10px;
+    background-position: center;
+  }
+  .mainpage h1 {
+    padding-top: 250px;
+  }
+  .mainpage .homeLearnMoreBtn {
+    margin-top: 2rem;
+  }
+  .mainpage .homeLearnMoreBtn a {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  .mainpage .homeLearnMoreBtn a:hover {
+    font-size: 0.9rem;
+  }
+  .divider {
+    background-color: beige;
+  }
+  .grad {
+    padding: 2rem 0rem;
+  }
+  .grad .generosity {
+    padding: 3rem 1rem;
+  }
+  .grad .generosity a {
+    font-size: 1.5rem;
+  }
+  .grad .generosity a:visited {
+    color: white;
+  }
+  .grad .generosity a:hover {
+    color: pink;
+  }
+  .newsAnnouncement {
+    padding: 2rem;
+  }
+  .newsAnnouncement p {
+    font-size: 1.6rem;
+  }
+  .newsAnnouncement .moreNewsBox {
+    display: block;
+    padding-top: 1rem;
+  }
+  .newsAnnouncement .moreNewsBox .newsBlock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .newsAnnouncement .moreNewsBox .newsBlock .innerBlockA, .newsAnnouncement .moreNewsBox .newsBlock .innerBlockB {
+    margin-top: 1rem;
+  }
+  .keybates p {
+    font-size: 20px;
+  }
+  .keybates .keybatesbtn {
+    margin-top: 2rem;
+  }
+  .keybates .keybatesbtn a {
+    padding: 0.8rem 1.5rem;
+  }
   .academics {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -568,8 +686,7 @@ nav .lunverra a:hover {
 }
 
 .footerPage {
-  height: 90vh;
-  padding: 3rem 2rem 3rem 6rem;
+  padding: 4rem 2rem 3rem 6rem;
   background-color: #111;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -640,6 +757,41 @@ nav .lunverra a:hover {
   .menuContainer .menuColumn {
     width: 100%;
     margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    padding: 0.5rem 2rem;
+  }
+  nav #menuToggleIcon {
+    font-size: 1.5rem;
+  }
+  nav .lunverra a {
+    font-size: 1.8rem;
+  }
+  .footerPage {
+    padding: 1rem;
+    display: block;
+  }
+  .footerPage .footerblock {
+    margin-top: 1rem;
+  }
+  .footerPage .footerblock ul {
+    padding: 0;
+  }
+  .footerPage .footerblock ul li {
+    line-height: 1.8rem;
+    font-size: 0.9rem;
+  }
+  .footerPage .footerblock .gift {
+    margin-top: 3rem;
+  }
+  .footerPage .footerblock .gifIcon a i {
+    font-size: 1.6rem;
+  }
+  .footerPage .footerblock .socials {
+    font-size: 1.6rem;
+    margin-left: 0px;
   }
 }
 .academicsMainPage {
@@ -874,6 +1026,32 @@ nav .lunverra a:hover {
   color: #fff;
 }
 
+@media (max-width: 600px) {
+  .admission-container .home-card {
+    padding: 1rem;
+  }
+  .admission-container .home-card .admissionTextCont {
+    top: 5rem;
+  }
+  .admission-container .home-card .admissionTextCont h1 {
+    font-size: 2rem;
+  }
+  .admission-container .home-card .admissionTextCont h1 .atLunverra {
+    font-size: 2.5rem;
+  }
+  .admission-container .home-card .admissionTextCont p {
+    padding: 0rem;
+  }
+  .applicationGuide {
+    padding: 2rem;
+  }
+  .applicationGuide h1 {
+    margin: 2rem 0rem 0rem 0rem;
+  }
+  .applicationGuide .applicationGuideNavs h2 {
+    font-size: 1.2rem;
+  }
+}
 .applicationWrapper {
   padding: 2rem 1rem;
 }
@@ -1170,89 +1348,6 @@ nav .lunverra a:hover {
   line-height: 1.5;
 }
 
-.sfs .bgColor {
-  background-color: #EDEDED;
-}
-.sfs .bgColor .nav-about {
-  background-color: #cfcfcf;
-}
-.sfs .bgColor .sfsHeader {
-  background-image: url(/static/images/lunverraGardenSun.webp);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 50vh;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.sfs .bgColor .sfsHeader h1 {
-  font-size: 4rem;
-}
-.sfs .bgColor .sfsMainContainer {
-  padding: 3rem 10rem;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra p {
-  font-size: 1.1rem;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra h1 {
-  color: #881125;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra h5 {
-  padding: 1rem 5rem 0rem 0rem;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra .bobcats {
-  font-size: 2rem;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra ul {
-  margin-top: 1rem;
-  font-weight: bold;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra ul li {
-  margin-top: 0.5rem;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra details {
-  background-color: #d2cfcf;
-  padding: 2rem;
-  border: 2px solid #881125;
-  margin-top: 2rem;
-}
-.sfs .bgColor .sfsMainContainer .affordingLunverra details summary {
-  color: #881125;
-  padding-bottom: 1rem;
-}
-.sfs .bgColor .sfsMainContainer .abtLunverra h1 {
-  margin-top: 3rem;
-  font-size: 2rem;
-}
-.sfs .bgColor .sfsMainContainer .abtLunverra p {
-  line-height: 1.8rem;
-  padding-right: 5rem;
-}
-.sfs .bgColor .sfsMainContainer .sfsImageFlex {
-  margin: 3rem 0rem;
-  height: 30vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-.sfs .bgColor .sfsMainContainer .sfsImageFlex img {
-  height: 100%;
-  width: 100%;
-}
-.sfs .bgColor .sfsMainContainer .feesAndAidsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin: 3rem 0rem;
-  line-height: 2.2rem;
-}
-.sfs .bgColor .sfsMainContainer .feesAndAidsGrid img {
-  height: 250px;
-  width: 400px;
-}
-
 .academicsImgCont {
   height: 30vh;
 }
@@ -1262,6 +1357,88 @@ nav .lunverra a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.extras .bgColor {
+  background-color: #EDEDED;
+}
+.extras .bgColor .nav-about {
+  background-color: #cfcfcf;
+}
+.extras .bgColor .extrasHeader {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.extras .bgColor .extrasHeader h1 {
+  font-size: 4rem;
+}
+.extras .bgColor .extrasMainContainer {
+  padding: 3rem 10rem;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra p {
+  font-size: 1.1rem;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra h1 {
+  color: #881125;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra h5 {
+  padding: 1rem 5rem 0rem 0rem;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra .bobcats {
+  font-size: 2rem;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra ul {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra ul li {
+  margin-top: 0.5rem;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra details {
+  background-color: #d2cfcf;
+  padding: 2rem;
+  border: 2px solid #881125;
+  margin-top: 2rem;
+}
+.extras .bgColor .extrasMainContainer .affordingLunverra details summary {
+  color: #881125;
+  padding-bottom: 1rem;
+}
+.extras .bgColor .extrasMainContainer .abtLunverra h1 {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+.extras .bgColor .extrasMainContainer .abtLunverra p {
+  line-height: 1.8rem;
+  padding-right: 5rem;
+}
+.extras .bgColor .extrasMainContainer .extrasImageFlex {
+  margin: 3rem 0rem;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.extras .bgColor .extrasMainContainer .extrasImageFlex img {
+  height: 100%;
+  width: 100%;
+}
+.extras .bgColor .extrasMainContainer .feesAndAidsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 3rem 0rem;
+  line-height: 2.2rem;
+}
+.extras .bgColor .extrasMainContainer .feesAndAidsGrid img {
+  height: 250px;
+  width: 400px;
 }
 
 * {

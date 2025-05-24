@@ -5,9 +5,16 @@
 {% endblock %}
 
 {% block body %}
-<div class="sfs">
+<div class="extras">
     <div class="bgColor">
-        <div class="sfsHeader">
+
+        {% set background_image = url_for('static', filename='images/lunvWalkSun.webp') %}
+        {% set heading = "Our Privacy Policy" %}
+        {% set linkurl = url_for('about') %}
+        {% set alttext = "About Lunverra" %}
+        {% include "heroii.html" %}     
+
+        <!-- <div class="extrasHeader">
         </div>
 
         <div class="nav-about">
@@ -15,9 +22,9 @@
                 <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
                 <a href="/about">Admission</a>
             </div>
-        </div>
+        </div> -->
 
-        <div class="sfsMainContainer">
+        <div class="extrasMainContainer">
 
             <div class="affordingLunverra">
                 <h1>Privacy Policy</h1>

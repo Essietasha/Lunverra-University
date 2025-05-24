@@ -5,19 +5,26 @@
 {% endblock %}
 
 {% block body %}
-<div class="sfs">
+<div class="extras">
     
     <div class="bgColor">
-        <div class="sfsHeader"></div>
+
+        {% set background_image = url_for('static', filename='images/lunvHallway2.webp') %}
+        {% set heading = "Frequently Asked Questions" %}
+        {% set linkurl = url_for('admission') %}
+        {% set alttext = "Admission" %}
+        {% include "heroii.html" %}
+
+        <!-- <div class="extrasHeader"></div>
 
         <div class="nav-about">
             <div class="navicons">
                 <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
                 <a href="/about">Admission</a>
             </div>
-        </div>
+        </div> -->
 
-        <div class="sfsMainContainer">
+        <div class="extrasMainContainer">
 
             <div class="affordingLunverra">
                 <h1>FAQs</h1>

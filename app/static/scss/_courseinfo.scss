@@ -155,3 +155,94 @@
     line-height: 2.0rem;
     padding: 1rem 0rem;
 }
+
+
+@media (max-width: 600px) {
+
+    .CourseInfoPage {
+
+        .CourseInfoPageTextEl{
+
+            p{
+                font-size: 3rem;
+            }
+        }
+    }
+
+
+    .CourseInfoPageSecII {
+        line-height: 2.0rem;
+        font-size: 1rem;
+        padding: 6rem 2rem;
+    }
+
+    .openMindedSec {
+        height: 90vh;
+        display: block;
+        padding: 2rem;
+
+        .openMindedTextEl {
+
+            h2{
+                font-size: 1.8rem;
+                line-height: 2rem;
+            }
+
+            p{
+                font-size: 1rem;
+                line-height: 1.8rem;
+            }
+
+            .acadmeicsDiv{
+        
+                a{
+                    padding: 0.7rem 1rem;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+
+
+    .batesStudent {
+        line-height: 1.5rem;
+        padding: 3rem 2rem;
+
+        h2{
+            font-size: 1.8rem;
+            padding: 2rem 0rem;
+        }
+
+        p{
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+    }
+
+    .coursesContainer {
+        line-height: 1.5rem;
+        padding: 1rem;
+
+        .minorAndMajor{
+            padding-left: 1rem;
+
+            h1{
+                font-size: 1.5rem;
+            }
+            p{
+                font-weight: 600;
+            }
+        }
+
+        .majorCourses {
+            display: block;
+            padding: 1rem;
+            line-height: 2rem;
+
+            ul{
+                padding: 0rem;
+            }
+        }
+    }
+}

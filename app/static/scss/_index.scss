@@ -187,12 +187,12 @@
 }
 
 .grad{
-    width: 100%;
-    height: 90vh;
     margin: auto;
     background-image: url(/static/images/Grad.webp);
-    background-size: contain;
-    padding-top: 15rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15rem 0rem 2rem 0rem;
+    overflow: hidden;
 
     .date{
         width: 90%;
@@ -234,7 +234,6 @@
 
 
 .newsAnnouncement {
-    height: 80vh;
     padding: 2rem 4rem;
 
     p {
@@ -248,10 +247,6 @@
     a{
         color: rgb(142, 7, 7);
         font-weight: bold;
-    }
-
-    .moreNews {
-        height: 50px;
     }
 
     .moreNewsBox {
@@ -271,7 +266,7 @@
 }
 
 .keybates {
-    height: 400px;
+    padding: 10rem 0rem;
     @include flexCenter();
     background-color: rgb(30, 26, 26);
     color: rgb(243, 239, 239);
@@ -303,7 +298,91 @@
 }
 
 @media (max-width: 600px) {
-  .academics {
-    grid-template-columns: repeat(1, 1fr);
-  }
+
+    .mainpage {
+        padding-left: 10px;
+        background-position: center;
+
+        h1{
+            padding-top: 250px;
+        }   
+
+        .homeLearnMoreBtn {
+            margin-top: 2rem;
+
+            a {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+
+                &:hover{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .divider{
+        background-color: beige;
+    }
+
+    .grad{
+        padding: 2rem 0rem;
+
+        .generosity {
+            padding: 3rem 1rem;
+
+            a {
+                font-size: 1.5rem;
+
+                &:visited{
+                    color: white;
+                }
+
+                &:hover{
+                    color: pink;
+                }
+            }
+        }
+    }
+
+
+    .newsAnnouncement {
+        padding: 2rem;
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        .moreNewsBox {
+            display: block;
+            padding-top: 1rem;
+
+            .newsBlock{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .innerBlockA, .innerBlockB{
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+
+    .keybates {
+        p{
+            font-size: 20px;
+        }
+
+        .keybatesbtn{
+            margin-top: 2rem;
+
+            a {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    }
+    .academics {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

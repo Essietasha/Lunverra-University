@@ -5,20 +5,27 @@
 {% endblock %}
 
 {% block body %}
-<div class="sfs">
+<div class="extras">
     <div class="bgColor">
-        <div class="sfsHeader">
-            <h1>Student Financial Services</h1>
-        </div>
 
-        <div class="nav-about">
-            <div class="navicons">
-                <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
-                <a href="/about">Admission</a>
+        {% set background_image = url_for('static', filename='images/lunverraGardenSun.webp') %}
+        {% set heading = "Student Financial Services" %}
+        {% include "heroii.html" %}
+
+        <!-- <div class="hero-pg">
+            <div class="extrasHeader">
+                <h1>Student Financial Services</h1>
             </div>
-        </div>
 
-        <div class="sfsMainContainer">
+            <div class="nav-about">
+                <div class="navicons">
+                    <a href="/"> <img src="/static/images/homeicon.webp" height="20px" width="20px" alt="Home"> </a>
+                    <a href="/about">Admission</a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="extrasMainContainer">
 
             <div class="affordingLunverra">
                 <h1>Affording Lunverra</h1>
@@ -49,7 +56,7 @@
                 </p>
             </div>
 
-            <div class="sfsImageFlex">
+            <div class="extrasImageFlex">
                 <img src="/static/images/lunvStudents1.webp" alt="Lunverra Campus">
                 <img src="/static/images/lunvWalkSun.webp" alt="Campus">
                 <img src="/static/images/lunverraHallway.webp" alt="Students">
