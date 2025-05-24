@@ -36,10 +36,6 @@ header {
   }
 }
 
-.loginNav{
-    background-color: rgb(215, 215, 162);
-}
-
 nav a {
   margin-left: 25px;
   text-decoration: none;
@@ -55,6 +51,7 @@ nav a:hover {
 }
 
 .login-container {
+  margin-top: 5rem;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 40px;

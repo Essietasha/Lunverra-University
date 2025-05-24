@@ -1,5 +1,10 @@
 @import 'variables';
 
+.aboutBodyCont{
+    background-color: rgb(248, 252, 255);
+    padding-bottom: 1rem;
+}
+
 .nav-about{
     height: 50px;
     background-color: #ffebc9;
@@ -74,6 +79,52 @@
 
             ul {
                 color: #698088;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    
+    .nav-about{
+        padding: 1rem;
+
+        .navicons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a{
+                &:nth-child(1){
+                    margin-left: 0rem;
+                }
+
+                &:nth-child(2){
+                    margin-left: 0rem;
+                }
+            }
+        }
+    }
+
+    .found{
+        padding: 4rem 2rem;
+
+        p{
+            font-size: 1.1rem;
+        }
+        
+    }
+    .aboutSec {
+        padding: 0rem 1rem;
+
+        .aboutGrid{
+            display: block;
+
+            .boxes {
+                margin-top: 1rem;
+                height: 450px;
             }
         }
     }

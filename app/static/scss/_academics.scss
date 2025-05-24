@@ -141,3 +141,34 @@
     }
   }
 }
+
+
+@media (max-width: 600px) {
+    .academicsMainPage {
+
+      .academicsMainPageDiv {
+          padding: 2rem;
+          display: block;
+          line-height: 1.8rem;
+      }
+
+      .firstbox {
+          h1 {
+              font-size: 25px;
+          }
+      }
+
+      .secondbox {
+        margin-top: 2rem;
+      }
+  }
+
+
+  .coursesMainContainer {
+    padding: 2rem;
+
+    h1 {
+      padding-bottom: 1.5rem;
+    }
+  }
+}

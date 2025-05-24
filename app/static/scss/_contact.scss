@@ -58,3 +58,41 @@
         }
     }
 }
+
+
+
+@media (max-width: 600px) {
+    
+    .contactSec{
+        padding: 5rem 2rem;
+
+        .contactflex{
+            display: block;
+            padding: 2rem 0rem;
+
+            .contactus{
+
+                h1{
+                    font-size: 2rem;
+                }
+
+                h2{
+                    font-size: 1.2rem;
+                }
+
+                h3{
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                }
+
+                p{
+                    font-size: 1rem;
+                }
+                
+                .mail{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

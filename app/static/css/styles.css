@@ -208,6 +208,11 @@
     padding: 0rem;
   }
 }
+.aboutBodyCont {
+  background-color: rgb(248, 252, 255);
+  padding-bottom: 1rem;
+}
+
 .nav-about {
   height: 50px;
   background-color: #ffebc9;
@@ -275,9 +280,40 @@
   color: #698088;
 }
 
+@media (max-width: 600px) {
+  .nav-about {
+    padding: 1rem;
+  }
+  .nav-about .navicons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-about .navicons a:nth-child(1) {
+    margin-left: 0rem;
+  }
+  .nav-about .navicons a:nth-child(2) {
+    margin-left: 0rem;
+  }
+  .found {
+    padding: 4rem 2rem;
+  }
+  .found p {
+    font-size: 1.1rem;
+  }
+  .aboutSec {
+    padding: 0rem 1rem;
+  }
+  .aboutSec .aboutGrid {
+    display: block;
+  }
+  .aboutSec .aboutGrid .boxes {
+    margin-top: 1rem;
+    height: 450px;
+  }
+}
 .mainpage {
   height: 100vh;
-  margin: auto;
   background-image: url(/static/images/gradmale.webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -610,7 +646,8 @@ body {
 }
 
 .container-fluid {
-  padding: 0;
+  padding: 0rem;
+  margin: 0rem;
 }
 
 button {
@@ -909,6 +946,25 @@ nav .lunverra a:hover {
   background: rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 600px) {
+  .academicsMainPage .academicsMainPageDiv {
+    padding: 2rem;
+    display: block;
+    line-height: 1.8rem;
+  }
+  .academicsMainPage .firstbox h1 {
+    font-size: 25px;
+  }
+  .academicsMainPage .secondbox {
+    margin-top: 2rem;
+  }
+  .coursesMainContainer {
+    padding: 2rem;
+  }
+  .coursesMainContainer h1 {
+    padding-bottom: 1.5rem;
+  }
+}
 .admission-container {
   height: 100vh;
   background-color: #333;
@@ -1122,6 +1178,31 @@ nav .lunverra a:hover {
   border-color: rgb(227, 227, 9);
 }
 
+@media (max-width: 600px) {
+  .contactSec {
+    padding: 5rem 2rem;
+  }
+  .contactSec .contactflex {
+    display: block;
+    padding: 2rem 0rem;
+  }
+  .contactSec .contactflex .contactus h1 {
+    font-size: 2rem;
+  }
+  .contactSec .contactflex .contactus h2 {
+    font-size: 1.2rem;
+  }
+  .contactSec .contactflex .contactus h3 {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  .contactSec .contactflex .contactus p {
+    font-size: 1rem;
+  }
+  .contactSec .contactflex .contactus .mail {
+    font-size: 1rem;
+  }
+}
 .nav-link {
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -1185,6 +1266,25 @@ nav .lunverra a:hover {
   padding-left: 0;
 }
 
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0;
+    margin: 0;
+  }
+  .campusHero .welcomeNote {
+    margin: 50% 0rem 0rem 0rem;
+  }
+  .campLife {
+    padding: 3rem 2rem;
+  }
+  .campLife h1 {
+    font-size: 25px;
+  }
+  .campLife p {
+    font-size: 1rem;
+    opacity: 90%;
+  }
+}
 .infoPage {
   background-color: #fff;
 }
@@ -1296,6 +1396,54 @@ nav .lunverra a:hover {
   justify-content: center;
 }
 
+@media (max-width: 600px) {
+  .honorsCollege {
+    height: 100vh;
+    display: block;
+    font-weight: bold;
+    padding: 3rem 2rem;
+  }
+  .honorsCollege .honorsFlex {
+    margin-top: 30%;
+    display: block;
+    padding-left: 0rem;
+    padding-bottom: 2rem;
+  }
+  .honorsCollege .honorsFlex p {
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+  .places {
+    padding: 3rem 2rem;
+  }
+  .places p {
+    font-size: 1rem;
+  }
+  .lunverraStudent {
+    padding: 1rem 2rem;
+  }
+  .majorMinor h1 {
+    font-size: 1.5rem;
+  }
+  .majorMinor .majorMinorGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .majorMinor .majorMinorGrid li {
+    font-size: 0.8rem;
+  }
+  .resources {
+    margin-top: 2rem;
+  }
+  .resources a {
+    color: rgb(7, 7, 216);
+    font-weight: 300;
+    font-size: 15px;
+  }
+  .resources .resourceGrid {
+    padding: 2rem;
+  }
+}
 .testimonials {
   padding: 3rem 2rem;
   background-color: #f9f9f9;
@@ -1419,7 +1567,6 @@ nav .lunverra a:hover {
 }
 .extras .bgColor .extrasMainContainer .extrasImageFlex {
   margin: 3rem 0rem;
-  height: 30vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -1440,6 +1587,64 @@ nav .lunverra a:hover {
   width: 400px;
 }
 
+@media (max-width: 600px) {
+  .extras .bgColor .extrasHeader {
+    height: 35vh;
+    color: #fff;
+    text-align: center;
+  }
+  .extras .bgColor .extrasHeader h1 {
+    font-size: 2rem;
+  }
+  .extras .bgColor .extrasMainContainer {
+    padding: 2rem;
+  }
+  .extras .bgColor .extrasMainContainer .affordingLunverra p {
+    font-size: 1rem;
+  }
+  .extras .bgColor .extrasMainContainer .affordingLunverra h5 {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .extras .bgColor .extrasMainContainer .affordingLunverra .bobcats {
+    font-size: 2rem;
+  }
+  .extras .bgColor .extrasMainContainer .affordingLunverra details {
+    background-color: #d2cfcf;
+    padding: 2rem;
+    border: 2px solid #881125;
+    margin-top: 2rem;
+  }
+  .extras .bgColor .extrasMainContainer .affordingLunverra details summary {
+    color: #881125;
+    padding-bottom: 1rem;
+  }
+  .extras .bgColor .extrasMainContainer .abtLunverra h1 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+  }
+  .extras .bgColor .extrasMainContainer .abtLunverra p {
+    line-height: 1.8rem;
+    padding-right: 1rem;
+  }
+  .extras .bgColor .extrasMainContainer .extrasImageFlex {
+    margin: 3rem 0rem;
+    display: grid;
+  }
+  .extras .bgColor .extrasMainContainer .extrasImageFlex img {
+    height: 100%;
+    width: 100%;
+  }
+  .extras .bgColor .extrasMainContainer .feesAndAidsGrid {
+    display: block;
+    margin: 3rem 0rem;
+    line-height: 1.8rem;
+  }
+  .extras .bgColor .extrasMainContainer .feesAndAidsGrid img {
+    height: 200px;
+    width: 80vw;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1475,10 +1680,6 @@ header {
   font-weight: bold;
 }
 
-.loginNav {
-  background-color: rgb(215, 215, 162);
-}
-
 nav a {
   margin-left: 25px;
   text-decoration: none;
@@ -1494,6 +1695,7 @@ nav a:hover {
 }
 
 .login-container {
+  margin-top: 5rem;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 40px;

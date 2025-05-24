@@ -136,3 +136,70 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+
+    .honorsCollege {
+        height: 100vh;
+        display: block;
+        font-weight: bold;
+        padding: 3rem 2rem;
+
+
+        .honorsFlex{
+            margin-top: 30%;
+            display: block;
+            padding-left: 0rem;
+            padding-bottom: 2rem;
+
+                
+            p{
+                font-size: 1rem;
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .places{
+        padding: 3rem 2rem;
+
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    .lunverraStudent{
+        padding: 1rem 2rem;
+    }
+
+    .majorMinor{
+        h1{
+            font-size: 1.5rem;
+        }
+
+        .majorMinorGrid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            li{
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+
+
+    .resources {
+        margin-top: 2rem;
+
+        a {
+            color: rgb(7, 7, 216);
+            font-weight: 300;
+            font-size: 15px;
+        }
+
+        .resourceGrid {
+            padding: 2rem;
+        }
+    }
+}

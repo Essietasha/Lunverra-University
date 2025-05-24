@@ -72,3 +72,30 @@
         padding-left: 0;
     }
 }
+
+
+@media (max-width: 600px) {
+
+    .navbar{
+        padding: 0;
+        margin: 0;
+    }
+    
+    .campusHero{
+        .welcomeNote{
+            margin: 50% 0rem 0rem 0rem;
+        }
+    }
+    .campLife {
+        padding: 3rem 2rem;
+
+        h1 {
+            font-size: 25px;
+        }
+
+        p{
+            font-size: 1rem;
+            opacity: 90%;
+        }
+    }
+}
