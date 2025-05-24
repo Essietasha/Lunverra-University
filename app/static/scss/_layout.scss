@@ -25,7 +25,7 @@ button {
     }
 }
 
-nav{
+.customNav{
     background-color: $navColor;
     color: $white;
     padding: 0.5rem 5rem;
@@ -204,7 +204,7 @@ nav{
 
 @media (max-width:600px) {
 
-    nav{
+    .customNav{
         padding: 0.5rem 2rem;
 
         #menuToggleIcon {

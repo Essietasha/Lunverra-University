@@ -658,28 +658,28 @@ button:hover {
   transform: scale(0.8);
 }
 
-nav {
+.customNav {
   background-color: #881125;
   color: #fff;
   padding: 0.5rem 5rem;
 }
-nav .navContainer {
+.customNav .navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav #menuToggleIcon {
+.customNav #menuToggleIcon {
   font-size: 2rem;
   cursor: pointer;
 }
-nav .lunverra a {
+.customNav .lunverra a {
   text-decoration: none;
   font-size: 2.5rem;
   cursor: pointer;
   color: #fff;
   font-weight: bold;
 }
-nav .lunverra a:hover {
+.customNav .lunverra a:hover {
   color: #fff;
 }
 
@@ -797,13 +797,13 @@ nav .lunverra a:hover {
   }
 }
 @media (max-width: 600px) {
-  nav {
+  .customNav {
     padding: 0.5rem 2rem;
   }
-  nav #menuToggleIcon {
+  .customNav #menuToggleIcon {
     font-size: 1.5rem;
   }
-  nav .lunverra a {
+  .customNav .lunverra a {
     font-size: 1.8rem;
   }
   .footerPage {
@@ -944,6 +944,23 @@ nav .lunverra a:hover {
 }
 .coursesMainContainer .courses-container .course-card:hover::before {
   background: rgba(0, 0, 0, 0.6);
+}
+.coursesMainContainer .allCourses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.coursesMainContainer .allCourses a {
+  text-decoration: none;
+  background-color: #111;
+  padding: 0.8rem 2rem;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+}
+.coursesMainContainer .allCourses a:hover {
+  background-color: #881125;
 }
 
 @media (max-width: 600px) {
