@@ -62,6 +62,7 @@
                     <a href="/informationcentre">Information Centre</a>
                     <a href="/testimonials">Testimonials</a>
                 </div>
+
                 {% if not session.get('user_id') %}
                     <div class="menuColumn">
                         <p class="menuHeader"> <a href="/login" class="menuHead">Login</a> </p>
@@ -73,10 +74,32 @@
                         <a href="/logout">Logout</a>
                     </div>
                 {% endif %}
+
+                {% if is_admin %}
+                    <div class="menuColumn">
+                        <p class="menuHeader"> <a href="/admin" class="menuHead">Admin</a> </p>
+                        <a href="/users">Users</a>
+                        <a href="/studentApplication">Student Applications</a>
+                        <a href="/fd">Add Faculty and Departments</a>
+                    </div>
+                {% endif %}
             </div>
 
 
             <main class="container-fluid">
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div>
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}" role="alert">
+                                {{ message }}
+                                <button class="close" onclick="this.parentElement.style.display='none'">&times;</button>
+                            </div>
+                            {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endwith %}
 
                 {% block body %}{% endblock %}
                 {% block scripts %}{% endblock %}

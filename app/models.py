@@ -5,33 +5,27 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    firstname = db.Column(db.String(100), nullable=False)
-    lastname = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)
-    department = db.Column(db.String(50), nullable=False)
+    registrationNumber = db.Column(db.String(10), unique=True)
+    firstname = db.Column(db.String(100))
+    lastname = db.Column(db.String(100))
+    email = db.Column(db.String(100), unique=True)
+    hashedPassword = db.Column(db.String(200))
+    dob = db.Column(db.Date)
+    phone = db.Column(db.String(100))
+    program = db.Column(db.String(100))
+    intake = db.Column(db.String(100))
+    edubackground = db.Column(db.String(200))
+    addMessage = db.Column(db.String(200))
+    applicationStatus = db.Column(db.Boolean, default=False)
     is_admin = db.Column(db.Boolean, default=False)
-
+    
     def set_password(self, password):
-        self.password = generate_password_hash(password)
+        self.hashedPassword = generate_password_hash(password)
 
     def check_password(self, password):
-        return check_password_hash(self.password, password)
+        return check_password_hash(self.hashedPassword, password)
 
-
-class Course(db.Model):
+class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    department = db.Column(db.String(50), nullable=False)
-    credits = db.Column(db.Integer, nullable=False)
-
-
-class Registration(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    student_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
-    reg_date = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
-
-    student = db.relationship('User', backref='registrations')
-    course = db.relationship('Course', backref='registrations')
+    registrationNumber = db.Column(db.String(10), db.ForeignKey('user.registrationNumber'))
+    application_date = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
