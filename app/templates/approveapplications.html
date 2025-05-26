@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Applications
+{% endblock %}
+
+{% block body %}
+<div class="approvals">
+    <h1>Students' Applications</h1>
+    <div class="approvalGrid">
+        {% for application, user in applications %}
+        <div class="approvalBox">
+            
+            <h3>{{ user.lastname }} {{ user.firstname }}</h3>
+            <ul>
+                <li><strong>ID: </strong>{{ application.id }}</li>
+                <li><strong>Registration Number: </strong>{{ application.registrationNumber }}</li>
+                <li><strong>Date of Birth: </strong>{{ user.dob }}</li>
+                <li><strong>Intake: </strong>{{ user.intake }}</li>
+                <li><strong>Program: </strong>{{ user.program }}</li>
+                <li><strong>Educational Background: </strong>{{ user.edubackground }}</li>
+                <li><strong>Additional Message: </strong>{{ user.addMessage }}</li>
+                <li><strong>Status: </strong>{{ 'Approved' if user.is_approved else 'Not Approved' }}</li>
+                <li><strong>Application Date: </strong>{{ application.application_date.strftime('%Y-%m-%d %H:%M') }}</li>
+
+                <form action="/approveapplications" method="post">
+                    <input type="hidden" name="registrationNumber" value="{{ user.registrationNumber }}">
+                    <button type="submit" class="{{ 'grey' if user.is_approved else 'green' }}">Approve</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

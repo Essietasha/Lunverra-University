@@ -5,7 +5,7 @@ import re, bleach, random
 from app.helpers import login_required
 from datetime import datetime, timezone
 from app.models import User, Application
-from app.email import send_studentID, send_applicationConfirmation
+from app.email import send_studentID, send_applicationConfirmation, send_approvalConfirmation
 
 @app.after_request
 def add_header(response):
@@ -31,6 +31,21 @@ def validate_password(password):
 
 def sanitize_input(input_str):
     return bleach.clean(input_str, tags=[], attributes={}, strip=True)
+
+@app.context_processor
+def userStatus():
+    user = None
+    is_admin = False
+
+    if "userID" in session:
+        user = User.query.get(session["userID"])
+        is_admin = user.is_admin if user else False
+
+    return {
+        "authenticated": user is not None,
+        "is_admin": is_admin,
+        "current_user": user
+    }
 
 
 @app.route("/")
@@ -104,12 +119,12 @@ def signup():
         session.clear()
 
     if request.method == "POST":
-        username = request.form.get("firstname")
-        email = request.form.get("email")
+        firstname = request.form.get("firstname").strip()
+        email = request.form.get("email").strip()
         password = request.form.get("password")
         confirmpassword = request.form.get("confirmpassword")
 
-        if not username or not email or not password or not confirmpassword:
+        if not firstname or not email or not password or not confirmpassword:
             flash("Please fill out all fields!", "danger")
             return redirect("/signup")
             
@@ -126,24 +141,24 @@ def signup():
             return redirect("/signup")
         
         if len(password) < 8:
-            flash("Password must be at least 8 charcaters!", "danger")
+            flash("Password must be at least 8 characters!", "danger")
             return redirect("/signup")
 
         try:
-            firstname = sanitize_input(validate_input(firstname)).lower
+            firstname = sanitize_input(validate_input(firstname)).lower()
             email = sanitize_input(validate_input(email))
             validate_password(password)
         except Exception as e:
             flash(str(e), "danger")
             return redirect("/signup")
         
-        existingUser = User.query.filter_by(firstname=firstname).first()
+        existingUser = User.query.filter_by(email=email).first()
         if existingUser:
-            flash(f"Oops! {firstname} exists, please try another name.", "danger")
+            flash(f"An account with {email} already exists. Try loging in.", "danger")
             return redirect("/signup")
         
         password= generate_password_hash(password)
-        registeredNumber = "lv" + firstname[:3].lower() + str(random.randint(10000, 99999))
+        registeredNumber = "LUNV2025" + firstname[:2] + firstname[-1] + str(random.randint(10000, 99999))
 
         newSignUpUser = User(firstname=firstname, hashedPassword=password, email=email, registrationNumber=registeredNumber)
         db.session.add(newSignUpUser)
@@ -173,9 +188,10 @@ def login():
         if not regNum or not password:
             flash("Please enter your Registration Number and Password!", "danger")
             return redirect("/login")
+            
         
         try:
-            regNum = sanitize_input(validate_input(regNum)).lower()
+            regNum = sanitize_input(validate_input(regNum))
         except Exception as e:
             flash(str(e), "danger")
             return redirect("/login")
@@ -183,7 +199,7 @@ def login():
         user = User.query.filter_by(registrationNumber=regNum).first()
 
         if not user or not check_password_hash(user.hashedPassword, password):
-            flash("Username or Password incorrect!", "danger")
+            flash("Registration Number or Password incorrect!", "danger")
             return redirect("/login")
 
         session["userID"] = user.id
@@ -241,10 +257,14 @@ def application():
             return redirect("/login")
         
         regNum = user.registrationNumber
+
         existing_application = Application.query.filter_by(registrationNumber=regNum).first()
         if existing_application:
             flash("You have already submitted an application.", "warning")
             return redirect("/")
+
+        new_Application = Application(registrationNumber=regNum)
+        db.session.add(new_Application)
         
         user.lastname = lastname
         user.phone = phone
@@ -261,8 +281,58 @@ def application():
             return redirect("/application")
         
         send_applicationConfirmation(email, firstname)
-        flash("Your application is successful! Please check your email or student dashboard for more information.", "success")
-        return redirect("/application")  
+        flash("Your application is successful! Please check your email or dashboard for more information.", "success")
+        return redirect("/dashboard")  
           
     return render_template("application.html")
 
+
+@app.route("/approveapplications", methods=["GET", "POST"])
+@login_required
+def approve_applications():
+
+    applications = db.session.query(Application, User).join(
+        User, Application.registrationNumber == User.registrationNumber
+    ).all()
+    
+    if request.method == "POST":
+        regNum = request.form.get("registrationNumber")
+
+        if not regNum:
+            flash("Registration number is missing.", "danger")
+            return redirect("/approveapplications")
+
+        user = User.query.filter_by(registrationNumber=regNum).first()
+
+        if user:
+            user.is_approved = True
+            email = user.email
+            firstname = user.firstname
+            program = user.program
+
+            db.session.commit()
+            send_approvalConfirmation(email, firstname, program)
+            flash(f"{user.firstname}'s application is now approved!", "success")
+        else:
+            flash("User not found.", "danger")
+        return redirect("/approveapplications")
+
+    return render_template("approveapplications.html", applications=applications)
+
+
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    userID = session.get("userID")
+
+    userProfile = User.query.filter_by(id=userID).first()
+    if not userProfile:
+        flash("User not found.", "danger")
+        return redirect("/login")
+
+    userRegNum = userProfile.registrationNumber
+
+    appDate = Application.query.filter_by(registrationNumber=userRegNum).first()
+    app_date = appDate.application_date if appDate else None
+
+    return render_template("dashboard.html", userProfile=userProfile, app_date=app_date)

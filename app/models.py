@@ -16,7 +16,7 @@ class User(db.Model):
     intake = db.Column(db.String(100))
     edubackground = db.Column(db.String(200))
     addMessage = db.Column(db.String(200))
-    applicationStatus = db.Column(db.Boolean, default=False)
+    is_approved = db.Column(db.Boolean, default=False)
     is_admin = db.Column(db.Boolean, default=False)
     
     def set_password(self, password):
@@ -29,3 +29,5 @@ class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     registrationNumber = db.Column(db.String(10), db.ForeignKey('user.registrationNumber'))
     application_date = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    
+    user = db.relationship('User', backref='applications')

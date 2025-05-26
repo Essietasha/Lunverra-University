@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block body %}
+<div class="profileDiv">
+    <h1>Dashboard</h1>
+
+    {% if userProfile.program %}
+        <div class="profileBox">
+            <h3>Welcome,  {{ userProfile.lastname }} {{ userProfile.firstname }}</h3>
+            <ul>
+                <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
+                <li><strong>Date of Birth: </strong>{{ userProfile.dob }}</li>
+                <li><strong>Intake: </strong>{{ userProfile.intake }}</li>
+                <li><strong>Program: </strong>{{ userProfile.program }}</li>
+                <li><strong>Educational Background: </strong>{{ userProfile.edubackground }}</li>
+                <li><strong>Application Date: </strong>{{ app_date.strftime('%Y-%m-%d %H:%M') }}</li>
+            </ul>
+
+            <div class="status">
+                <p>Application Status: {{ 'Approved' if userProfile.is_approved else 'Pending' }}</p>
+                {% if userProfile.is_approved %}
+                    <a href="/courseregistration">Register Courses</a>
+                {% endif %}
+            </div>
+
+        </div>
+    {% else %}
+        <div class="profileBox">
+            <h3>Welcome, {{ userProfile.firstname }}</h3>
+            <ul>
+                <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
+            </ul>
+
+            <div class="status">
+                <p>Application Status: You have no current appliaction.</p>
+                <a href="/application">Proceed to apply</a>
+            </div>
+
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

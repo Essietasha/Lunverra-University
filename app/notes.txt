@@ -19,7 +19,8 @@ Run App:
     .\venv\Scripts\activate
     python run.py
 
-Database set up:
+
+DATABASE SET UP:
     Activate venv
     Set up/Configure __init__.py
     Set the FLASK_APP Environment Variable: 
@@ -31,6 +32,23 @@ Database set up:
     Then run: db.create_all()
     Quit flask shell Run: exit() or quit()
     To Deactivate Venv Run: deactivate
+
+    QUERY THE DB in shell: 
+        Activate Venv
+        flask shell
+        from app import db
+        from app.models import User
+        User.query.all()
+        exit()
+
+    ADD DATA TO DB in shell:
+        Activate Venv
+        flask shell
+        from app import db
+        from app.models import User
+        new_user = User(firstname='Essie', lastname='Tasha')
+        db.session.add(new_user)
+        db.session.commit()
 
 
 Migration - Run Database Migrations- Update models/column/table in database
@@ -188,3 +206,38 @@ CSFR AND XSS Malware Attack Protection
 
 //Create admin.py Update db.
     In venv: Run python admin.py
+
+//_NAME_ = _MAIN_
+if __name__ == "__main__": 
+    app.run(debug=True)
+    adminUser()
+    When we run a Python file directly in terminal/shell e.g python admin.py, Python sets the special variable __name__ to "__main__".
+    But when we import that file somewhere else e.g import admin/helpers, the __name__ is set to the module's name "admin" not "__main__".
+    This means the code in the file only runs directly/automcly if the file's name is set to main with _name_ = _main_. If not, the code in such files will not run autom except if explicitly called.
+    
+    So when you write: if __name__ == "__main__": This means “Run the code here only if this file is run directly, not if it’s imported.”
+
+
+// from app import app
+    "From the folder named app, import the Flask app I created."
+    From myapp folder, import the app object, which is my Flask application instance which i created with app = Flask(__name__) usually within the _init_.py file. That line creates the Flask application.
+
+//Connect sqlite3 to Python to Query DBimport sqlite3
+    import os
+
+    db_path = os.path.join("instance", "ludb.db")
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = cursor.fetchall()
+    print("Tables in the database:")
+    for table in tables:
+        print(table[0])
+
+    cursor.execute("SELECT * FROM User;")
+    userRows = cursor.fetchall()
+    for user in userRows:
+        print(user)
+
+    conn.close()

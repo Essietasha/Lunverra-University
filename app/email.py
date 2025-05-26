@@ -5,33 +5,37 @@ from flask import current_app
 
 def send_studentID(email, firstname, registrationNumber):
 
-    idMessge = Message('You have successfully signed up at Lunverra University!',
+    userFirstname = firstname[:1].upper() + firstname[1:]
+
+    idMessge = Message(f'Welcome to Lunverra University, {userFirstname}! 🎓',
                   sender=current_app.config['MAIL_USERNAME'],
                   recipients=[email] )
     idMessge.body = f"""
-Hi {firstname}!
+Hi {userFirstname}!👋
 
 You have successfully signed up at Lunverra University. 
 
-Your Registration Number is {registrationNumber}:
-Your Password remains the same.
+🆔 Your Registration Number is {registrationNumber}
+🔐 Your Password remains the same.
 
-Kindly Login using your STUDENT ID and your PASSWORD!
+You can now Login to the website using this Registration Number and your PASSWORD!
 
 Warm regards,  
-Lunverra
+Lunverra Team 🌟
 """
     mail.send(idMessge)
 
 
 def send_applicationConfirmation(email, firstname):
 
-    applicationMessge = Message('Your application is successful!',
+    userFirstname = firstname[:1].upper() + firstname[1:]
+
+    applicationMessge = Message('Your application at Lunverra is successful!',
                   sender=current_app.config['MAIL_USERNAME'],
                   recipients=[email] )
     applicationMessge.body = f"""
-Hi {firstname}!
-You have successfully applied to Lunverra University. 
+Hi {userFirstname}!
+You have successfully applied to Lunverra University. 🎓
 
 Your application is now under review. Please be prepared for a virtual interview, 
 which is usually scheduled two weeks after your application. Prepare all your documents 
@@ -44,7 +48,34 @@ admissions@lunverra.edu.
 Kindly check your mails at intervals for further notifications!
 
 Warm regards,  
-Lunverra.
+Lunverra Team 🌟 
+"""
+    mail.send(applicationMessge)
+
+
+def send_approvalConfirmation(email, firstname, program):
+
+    userFirstname = firstname[:1].upper() + firstname[1:]
+
+    applicationMessge = Message('Your application Has Been Approved!',
+                  sender=current_app.config['MAIL_USERNAME'],
+                  recipients=[email] )
+    applicationMessge.body = f"""
+Dear {userFirstname},
+
+Congratulations!
+We are pleased to inform you that your application to study {program} at Lunverra University has been approved
+and you have been admitted into our university. 🎓
+
+You may now proceed to register your courses on the school's website.
+Thank you for choosing us. We look forward to welcoming you.
+
+If you have any questions, feel free to contact our admissions office at 
+admissions@lunverra.edu.
+
+
+Best regards,  
+The Admissions Team 🌟 
 """
     mail.send(applicationMessge)
 

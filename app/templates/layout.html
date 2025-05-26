@@ -63,7 +63,7 @@
                     <a href="/testimonials">Testimonials</a>
                 </div>
 
-                {% if not session.get('user_id') %}
+                {% if not session.get('userID') %}
                     <div class="menuColumn">
                         <p class="menuHeader"> <a href="/login" class="menuHead">Login</a> </p>
                         <a href="/signup">Sign Up</a>
@@ -77,9 +77,9 @@
 
                 {% if is_admin %}
                     <div class="menuColumn">
-                        <p class="menuHeader"> <a href="/admin" class="menuHead">Admin</a> </p>
+                        <p class="menuHeader"> <a href="/admin" class="menuHead">Admin Dashboard</a> </p>
                         <a href="/users">Users</a>
-                        <a href="/studentApplication">Student Applications</a>
+                        <a href="/approveapplications">View/Approve Applications</a>
                         <a href="/fd">Add Faculty and Departments</a>
                     </div>
                 {% endif %}
