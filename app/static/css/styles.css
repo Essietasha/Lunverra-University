@@ -1606,6 +1606,7 @@ button:hover {
 
 .approvals {
   padding: 2rem;
+  min-height: 100vh;
 }
 .approvals h1 {
   margin-bottom: 1rem;
@@ -1642,6 +1643,7 @@ button:hover {
 
 .profileDiv {
   padding: 2rem;
+  min-height: 100vh;
 }
 .profileDiv h1 {
   text-align: center;
@@ -1670,6 +1672,40 @@ button:hover {
 }
 .profileDiv .profileBox a {
   color: #fff;
+  font-weight: bold;
+}
+
+.studentsDiv {
+  padding: 2rem;
+  min-height: 100vh;
+}
+.studentsDiv h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #881125;
+}
+.studentsDiv .tableHeader {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  font-weight: bold;
+  margin: 1.2rem 0rem;
+  font-size: 1.2rem;
+}
+.studentsDiv .tableBody {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.studentsDiv .tableBody li {
+  list-style: none;
+}
+.studentsDiv .deletestudentBtn {
+  background-color: rgb(192, 12, 12);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px;
   font-weight: bold;
 }
 
@@ -1746,6 +1782,37 @@ button:hover {
   }
   .profileDiv .profileBox .status {
     display: block;
+  }
+  .studentsDiv {
+    padding: 2rem 0.5rem;
+  }
+  .studentsDiv h1 {
+    margin-bottom: 1.5rem;
+  }
+  .studentsDiv .tableHeader {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1rem 0rem;
+    font-size: 1rem;
+  }
+  .studentsDiv .tableBody {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .studentsDiv .tableBody li {
+    list-style: none;
+    font-size: 0.8rem;
+  }
+  .studentsDiv .deletestudentBtn {
+    background-color: rgb(192, 12, 12);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
   }
 }
 * {

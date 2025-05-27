@@ -241,3 +241,26 @@ if __name__ == "__main__":
         print(user)
 
     conn.close()
+
+
+//db.relationship and Backrefs
+    NOTE: Before you can use a backref (or any kind of relationship) between two tables, there must be a foreign key in
+    one table pointing to the other. The foreign key is what tells the database how these two tables are connected.
+    E.g in Application Table: regNum = db.Column(db.String(10), db.ForeignKey('user.regNum))
+
+    user = db.relationship('User', backref='applications')
+    db.relationship() tells the system how things are related in the db. 
+    For example, an application belongs to one user, and a user can have many applications. 
+    By writing user = db.relationship('User', backref='applications'), 're telling the app:
+    "Let me easily jump from an application to the user who submitted it":
+            application = Application.query.get(1)  # Gets the application with id=1
+            print(application.user)  # Get the user who submitted that application
+
+    and also 
+    "Let me get all the applications a user has":
+            user = User.query.filter_by(id=userID)
+            print(user.applications)  # List of all Application objects with that user id.
+
+    THIS: applications in backref has an "s" at the end because one user can submit many of them, 
+    it’s like saying "user.applications" should give m a list, not just one thing. 
+    This setup saves one from writing complicated database queries every time .

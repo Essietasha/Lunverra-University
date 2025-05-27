@@ -219,9 +219,12 @@ def logout():
 @app.route("/application", methods=["GET", "POST"])
 @login_required
 def application():
-    userID = session.get("userID")  
+    userID = session.get("userID")
+    user = User.query.filter_by(id=userID).first()
+    firstname = user.firstname[:1].upper() + user.firstname[1:]
 
     if request.method == "POST":
+        
         firstname = request.form.get("firstname")
         email = request.form.get("email")
         lastname = request.form.get("lastname")
@@ -244,7 +247,10 @@ def application():
             lastname = sanitize_input(validate_input(lastname))
             phone = sanitize_input(validate_input(phone))
             edubackground = sanitize_input(validate_input(edubackground))
-            addMessage = sanitize_input(validate_input(addMessage))
+            if addMessage:
+                addMessage = sanitize_input(validate_input(addMessage))
+            else:
+                addMessage = None
         except Exception as e:
             flash(str(e), "danger")
             return redirect("/application")
@@ -260,7 +266,7 @@ def application():
 
         existing_application = Application.query.filter_by(registrationNumber=regNum).first()
         if existing_application:
-            flash("You have already submitted an application.", "warning")
+            flash("You have already submitted an application. Visit your dashboard to review.", "warning")
             return redirect("/")
 
         new_Application = Application(registrationNumber=regNum)
@@ -284,7 +290,7 @@ def application():
         flash("Your application is successful! Please check your email or dashboard for more information.", "success")
         return redirect("/dashboard")  
           
-    return render_template("application.html")
+    return render_template("application.html", firstname=firstname, email=user.email)
 
 
 @app.route("/approveapplications", methods=["GET", "POST"])
@@ -331,8 +337,63 @@ def dashboard():
         return redirect("/login")
 
     userRegNum = userProfile.registrationNumber
+    userfirstname = userProfile.firstname[:1].upper() + userProfile.firstname[1:]
 
     appDate = Application.query.filter_by(registrationNumber=userRegNum).first()
     app_date = appDate.application_date if appDate else None
 
-    return render_template("dashboard.html", userProfile=userProfile, app_date=app_date)
+    return render_template("dashboard.html", userProfile=userProfile, app_date=app_date, userfirstname=userfirstname)
+
+
+@app.route("/students")
+@login_required
+def students():
+
+    userID = session.get("userID")
+    admin = User.query.filter_by(id=userID).first()
+
+    if not admin or not admin.is_admin:
+        flash("Access denied. Admins only.", "danger")
+
+    students = User.query.all()
+    return render_template("students.html", students=students, isAdmin=admin.is_admin, currentUserID=userID)
+
+
+@app.route("/deletestudent/<int:studentID>", methods=["POST"])
+@login_required
+def deleteStudent(studentID):
+    userID = session.get("userID")
+    admin = User.query.filter_by(id=userID).first()
+
+    if not admin or not admin.is_admin:
+        flash("Access denied. Admins only.", "danger")
+        return redirect("/students")
+    
+    student = User.query.get_or_404(studentID)
+    studentRegNum = student.registrationNumber
+
+    studentApplication = Application.query.filter_by(registrationNumber=studentRegNum).first()
+
+    if student.id == userID:
+        flash("You cannot delete your own account.", "warning")
+        return redirect("/students")
+
+    db.session.delete(student)
+    if studentApplication:
+        db.session.delete(studentApplication)
+    db.session.commit()
+    flash(f"{student.firstname} has been deleted.", "success")
+    return redirect("/students")
+
+
+@app.route("/courseregistration")
+@login_required
+def courseregistration():
+    userID = session.get("userID")
+
+    return render_template("courseregistration.html")
+
+
+@app.errorhandler(404)
+def pageNotFound(e):
+    return render_template("notfound.html", errorMessage=str(e)), 404

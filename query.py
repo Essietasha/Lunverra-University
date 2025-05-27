@@ -18,4 +18,25 @@ userRows = cursor.fetchall()
 for user in userRows:
     print(user)
 
+cursor.execute("SELECT * FROM Application;")
+rows = cursor.fetchall()
+for appl in rows:
+    print(appl)
+
+# def delUser():
+#     name = 'essietasha'
+#     cursor.execute("DELETE FROM User WHERE firstname = ?", (name,))
+#     print(f'{name} deleted')
+#     conn.commit()
+
+# delUser()
+
+# def delApplication():
+#     id = 4
+#     cursor.execute("DELETE FROM Application WHERE id = ?", (id,))
+#     print(f'Application {id} deleted')
+#     conn.commit()
+
+# delApplication()
+
 conn.close()

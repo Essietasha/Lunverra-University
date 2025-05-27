@@ -25,7 +25,8 @@
 
                 <form action="/approveapplications" method="post">
                     <input type="hidden" name="registrationNumber" value="{{ user.registrationNumber }}">
-                    <button type="submit" class="{{ 'grey' if user.is_approved else 'green' }}">Approve</button>
+                    <button type="submit" class="{{ 'grey' if user.is_approved else 'green' }}" 
+                    {% if user.is_approved %} disabled {% endif %}> Approve </button>
                 </form>
             </div>
         {% endfor %}

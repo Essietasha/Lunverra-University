@@ -10,7 +10,9 @@
 
     {% if userProfile.program %}
         <div class="profileBox">
-            <h3>Welcome,  {{ userProfile.lastname }} {{ userProfile.firstname }}</h3>
+            <h3>Welcome,  {{ userProfile.lastname }} {{ userfirstname }}</h3>
+            <p>You have successfully applied to Lunverra University. 🎓</p>
+            <p>Your application is now under review. Below is your application details.</p>
             <ul>
                 <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
                 <li><strong>Date of Birth: </strong>{{ userProfile.dob }}</li>
@@ -30,7 +32,7 @@
         </div>
     {% else %}
         <div class="profileBox">
-            <h3>Welcome, {{ userProfile.firstname }}</h3>
+            <h3>Welcome, {{ userfirstname }}</h3>
             <ul>
                 <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
             </ul>

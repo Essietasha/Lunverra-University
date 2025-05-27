@@ -23,6 +23,12 @@ $navColor: #881125;
     gap: 1rem;
 }
 
+@mixin gridTable {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
 @mixin flexSB {
     display: flex;
     justify-content: space-between;

@@ -70,17 +70,20 @@
                     </div>
                     {% else %}
                     <div class="menuColumn">
-                        <p class="menuHeader"> <a href="/dashboard" class="menuHead">Dashboard</a> </p>
-                        <a href="/logout">Logout</a>
-                    </div>
-                {% endif %}
-
-                {% if is_admin %}
-                    <div class="menuColumn">
-                        <p class="menuHeader"> <a href="/admin" class="menuHead">Admin Dashboard</a> </p>
-                        <a href="/users">Users</a>
-                        <a href="/approveapplications">View/Approve Applications</a>
-                        <a href="/fd">Add Faculty and Departments</a>
+                        {% if not is_admin %}
+                            <p class="menuHeader"> <a href="/dashboard" class="menuHead">Dashboard</a> </p>
+                            <a href="/logout">Logout</a>
+                        {% endif %}
+                        
+                        {% if is_admin %}
+                        <div class="menuColumn">
+                            <p class="menuHeader"> <p class="menuHead">Admin</p>
+                            <a href="/students">Students</a>
+                            <a href="/approveapplications">View/Approve Applications</a>
+                            <a href="/fd">Add Faculty and Departments</a>
+                            <a href="/logout">Logout</a>
+                        </div>
+                        {% endif %}
                     </div>
                 {% endif %}
             </div>
