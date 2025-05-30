@@ -6,11 +6,11 @@ conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 # List tables
-cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-tables = cursor.fetchall()
-print("Tables in the database:")
-for table in tables:
-    print(table[0])
+# cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+# tables = cursor.fetchall()
+# print("Tables in the database:")
+# for table in tables:
+#     print(table[0])
 
 # Fetch all users
 cursor.execute("SELECT * FROM User;")
@@ -22,6 +22,21 @@ cursor.execute("SELECT * FROM Application;")
 rows = cursor.fetchall()
 for appl in rows:
     print(appl)
+
+cursor.execute("SELECT * FROM Faculty;")
+rows = cursor.fetchall()
+for f in rows:
+    print(f)
+
+cursor.execute("SELECT * FROM Department;")
+rows = cursor.fetchall()
+for f in rows:
+    print(f)
+
+cursor.execute("SELECT * FROM Course;")
+rows = cursor.fetchall()
+for f in rows:
+    print(f)
 
 # def delUser():
 #     name = 'essietasha'
@@ -38,5 +53,6 @@ for appl in rows:
 #     conn.commit()
 
 # delApplication()
+
 
 conn.close()

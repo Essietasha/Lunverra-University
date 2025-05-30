@@ -4,8 +4,10 @@ from app import app, db
 import re, bleach, random
 from app.helpers import login_required
 from datetime import datetime, timezone
-from app.models import User, Application
+from app.models import User, Application, Faculty, Department, Course, CourseRegistration
 from app.email import send_studentID, send_applicationConfirmation, send_approvalConfirmation
+
+
 
 @app.after_request
 def add_header(response):
@@ -112,6 +114,9 @@ def employment():
 def faqs():
     return render_template("faqs.html")
 
+@app.errorhandler(404)
+def pageNotFound(e):
+    return render_template("notfound.html", errorMessage=str(e)), 404
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -342,7 +347,9 @@ def dashboard():
     appDate = Application.query.filter_by(registrationNumber=userRegNum).first()
     app_date = appDate.application_date if appDate else None
 
-    return render_template("dashboard.html", userProfile=userProfile, app_date=app_date, userfirstname=userfirstname)
+    registered_courses = Course.query.join(CourseRegistration).filter(CourseRegistration.userID == userID).all()
+
+    return render_template("dashboard.html", userProfile=userProfile, app_date=app_date, userfirstname=userfirstname, registered_courses=registered_courses)
 
 
 @app.route("/students")
@@ -381,19 +388,144 @@ def deleteStudent(studentID):
     db.session.delete(student)
     if studentApplication:
         db.session.delete(studentApplication)
+
+    CourseRegistration.query.filter_by(userID=student.id).delete()
+
+    db.session.delete(student)
     db.session.commit()
     flash(f"{student.firstname} has been deleted.", "success")
     return redirect("/students")
 
 
-@app.route("/courseregistration")
+
+@app.route('/getdepartments/<int:facultyID>')
+def getDepartments(facultyID):
+    departments = Department.query.filter_by(facultyID=facultyID).all()
+    return jsonify({'departments': [{'id': d.id, 'name': d.name} for d in departments]})
+
+
+@app.route('/getcourses/<int:departmentID>')
+def getCourses(departmentID):
+    courses = Course.query.filter_by(departmentID=departmentID).all()
+    return jsonify({'courses': [{'id': c.id, 'name': c.name} for c in courses]})
+
+
+@app.route('/courseregistration', methods=['GET', 'POST'])
 @login_required
-def courseregistration():
+def courseRegistration():
     userID = session.get("userID")
+    user = User.query.filter_by(id=userID).first()
 
-    return render_template("courseregistration.html")
+    if request.method == 'POST':        
+        facultyID = request.form.get('faculty')
+        departmentID = request.form.get('department')
+        selectedCourses = request.form.getlist('courses')  # list of selected course IDs (strings)
+        
+        if user.faculty_id and user.department_id:
+            if str(user.faculty_id) != facultyID or str(user.department_id) != departmentID:
+                flash("You’ve already selected a faculty and department.", "danger")
+                return redirect("/courseregistration")
+
+        if not facultyID or not departmentID:
+            flash('Faculty and department must be selected.', 'danger')
+            return redirect("/courseregistration")
+        
+        faculty = Faculty.query.get(facultyID)
+        department = Department.query.get(departmentID)
+
+        if not faculty or not department:
+            flash('Invalid faculty or department selection.', 'danger')
+            return redirect("/courseregistration")
+        
+        user.faculty_id = facultyID
+        user.department_id = departmentID
+        
+
+        if not selectedCourses:
+            flash("Please select at least one course.", "warning")
+            return redirect("/courseregistration")
+        
+        already_registered_courses = []
+        newly_registered_courses = []
+
+        for course_id in selectedCourses:
+            existing = CourseRegistration.query.filter_by(userID=user.id, courseID=course_id).first()
+            course = Course.query.get(course_id)
+            if existing:
+                already_registered_courses.append(course.name if course else f"Course ID {course_id}")
+            else:
+                registration = CourseRegistration(userID=user.id, courseID=course_id)
+                db.session.add(registration)
+                newly_registered_courses.append(course.name if course else f"Course ID {course_id}")
+        
+        if newly_registered_courses:
+            user.is_registered = True
+
+        db.session.commit()
+
+        if already_registered_courses:
+            flash(f"You have already registered for: {', '.join(already_registered_courses)}", "warning")
+
+        if newly_registered_courses:
+            flash(f"You have successfully registered for: {', '.join(newly_registered_courses)}", "success")
+
+        return redirect("/courseregistration")
+
+    else:
+        faculties = Faculty.query.all()
+        # Also fetch user’s registered course IDs to disable them in the UI
+        registered_course_ids = [reg.courseID for reg in CourseRegistration.query.filter_by(userID=user.id).all()]
+        return render_template('courseregistration.html', faculties=faculties, registered_course_ids=registered_course_ids)
 
 
-@app.errorhandler(404)
-def pageNotFound(e):
-    return render_template("notfound.html", errorMessage=str(e)), 404
+
+@app.route('/manageAcademics', methods=['GET', 'POST'])
+@login_required
+def manage_academics():
+    userID = session.get("userID")
+    user = User.query.filter_by(id=userID).first()
+
+    if not user.is_admin:
+        flash("Admins only.", "danger")
+        return redirect('/')
+
+    faculties = Faculty.query.all()
+    departments = Department.query.all()
+
+    # Faculty Form
+    if 'add_faculty' in request.form:
+        name = request.form.get('faculty_name')
+        if Faculty.query.filter_by(name=name).first():
+            flash('Faculty already exists.', 'warning')
+        else:
+            db.session.add(Faculty(name=name))
+            db.session.commit()
+            flash('Faculty added successfully.', 'success')
+        return redirect("/manageAcademics")
+
+    # Department Form
+    if 'add_department' in request.form:
+        name = request.form.get('department_name')
+        faculty_id = request.form.get('department_faculty')
+        if Department.query.filter_by(name=name).first():
+            flash('Department already exists.', 'warning')
+        else:
+            db.session.add(Department(name=name, facultyID=faculty_id))
+            db.session.commit()
+            flash('Department added successfully.', 'success')
+        return redirect("/manageAcademics")
+
+    # Course Form
+    if 'add_course' in request.form:
+        name = request.form.get('course_name')
+        code = request.form.get('course_code')
+        department_id = request.form.get('course_department')
+        if Course.query.filter_by(code=code).first():
+            flash('Course code already exists.', 'warning')
+        else:
+            db.session.add(Course(name=name, code=code, departmentID=department_id))
+            db.session.commit()
+            flash('Course added successfully.', 'success')
+        return redirect("/manageAcademics")
+
+    return render_template('manageAcademics.html', faculties=faculties, departments=departments)

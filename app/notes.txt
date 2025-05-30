@@ -255,6 +255,7 @@ if __name__ == "__main__":
     "Let me easily jump from an application to the user who submitted it":
             application = Application.query.get(1)  # Gets the application with id=1
             print(application.user)  # Get the user who submitted that application
+            print(application.user.name)  # Get the user object
 
     and also 
     "Let me get all the applications a user has":
@@ -263,4 +264,4 @@ if __name__ == "__main__":
 
     THIS: applications in backref has an "s" at the end because one user can submit many of them, 
     it’s like saying "user.applications" should give m a list, not just one thing. 
-    This setup saves one from writing complicated database queries every time .
+    This setup saves one from writing complicated database queries every time.

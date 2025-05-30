@@ -29,6 +29,26 @@
                 {% endif %}
             </div>
 
+
+            {% if userProfile.is_registered %}
+                <div class="myRegistrations">
+                    <h2>My Course Registrations</h2>
+                    <div class="myCourses">
+                        <h5>Faculty: {{ userProfile.faculty.name }}</h5>
+                        <h5>Department: {{ userProfile.department.name }}</h5>
+
+                        <h6>Registered Courses:</h6>
+                        <ul>
+                        {% for course in registered_courses %}
+                            <li>{{ course.name }} ({{ course.code }})</li>
+                        {% endfor %}
+                        </ul>
+
+                        <a href="/courseregistration">Update Courses</a>
+                    </div>
+                </div>
+            {% endif %}
+
         </div>
     {% else %}
         <div class="profileBox">

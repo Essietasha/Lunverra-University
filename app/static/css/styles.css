@@ -1610,6 +1610,7 @@ button:hover {
 }
 .approvals h1 {
   margin-bottom: 1rem;
+  text-align: center;
 }
 .approvals .approvalGrid {
   display: grid;
@@ -1709,6 +1710,69 @@ button:hover {
   font-weight: bold;
 }
 
+.myRegistrations {
+  padding: 2rem 0rem;
+}
+.myRegistrations h2 {
+  color: #881125;
+}
+.myRegistrations .myCourses {
+  padding: 1rem 0rem;
+}
+.myRegistrations .myCourses h6 {
+  padding: 1rem 0rem 0rem 0rem;
+}
+.myRegistrations .myCourses a {
+  color: rgb(10, 89, 10);
+}
+
+.manageAcademics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 6rem 2rem;
+  background-color: #172636;
+}
+.manageAcademics .manageAcademicsBox {
+  border: 1px solid #ccc;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.manageAcademics .manageAcademicsBox h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.manageAcademics .manageAcademicsBox input, .manageAcademics .manageAcademicsBox select, .manageAcademics .manageAcademicsBox button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.manageAcademics .manageAcademicsBox button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.manageAcademics .manageAcademicsBox button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .manageAcademics {
+    display: block;
+    padding: 2rem;
+  }
+  .manageAcademicsBox {
+    margin-bottom: 1rem;
+    padding: 2rem 1rem;
+  }
+}
 .alert {
   margin-bottom: 0;
 }

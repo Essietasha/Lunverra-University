@@ -14,3 +14,4 @@ flask_session/
 admin.py
 query.py
 delii.py
+fd.py

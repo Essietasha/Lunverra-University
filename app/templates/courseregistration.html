@@ -6,5 +6,118 @@
 
 
 {% block body %}
-<H1>HI</H1>
+    <form method="POST" action="/courseregistration">
+        <label for="faculty">Faculty</label>
+        <select id="faculty" name="faculty" required>
+            <option value="" disabled selected>Select Faculty</option>
+            {% for faculty in faculties %}
+                <option value="{{ faculty.id }}">{{ faculty.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="department">Department</label>
+        <select id="department" name="department" required disabled>
+            <option value="" disabled selected>Select Department</option>
+        </select>
+
+        <label for="courses">Courses</label>
+        <div id="coursesContainer">
+            <!-- Courses checkboxes will be populated here -->
+        </div>
+
+        <button type="submit">Register Courses</button>
+    </form>
+
+
+<script>
+    const facultySelect = document.getElementById('faculty');
+    const departmentSelect = document.getElementById('department');
+    const coursesContainer = document.getElementById('coursesContainer');
+
+    // Registered courses from backend (array of integers)
+    const registeredCourseIds =JSON.parse('{{ registered_course_ids | tojson | safe }}');
+
+    facultySelect.addEventListener('change', () => {
+        const facultyId = facultySelect.value;
+        departmentSelect.innerHTML = '<option value="" disabled selected>Loading...</option>';
+        departmentSelect.disabled = true;
+        coursesContainer.innerHTML = '';
+
+        fetch(`/getdepartments/${facultyId}`)
+        .then(res => res.json())
+        .then(data => {
+            departmentSelect.disabled = false;
+            departmentSelect.innerHTML = '<option value="" disabled selected>Select Department</option>';
+            data.departments.forEach(dept => {
+                const option = document.createElement('option');
+                option.value = dept.id;
+                option.textContent = dept.name;
+                departmentSelect.appendChild(option);
+            });
+        });
+    });
+
+    departmentSelect.addEventListener('change', () => {
+        const deptId = departmentSelect.value;
+        coursesContainer.innerHTML = 'Loading courses...';
+
+        fetch(`/getcourses/${deptId}`)
+        .then(res => res.json())
+        .then(data => {
+            coursesContainer.innerHTML = '';
+            data.courses.forEach(course => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = 'courses';
+                checkbox.value = course.id;
+                checkbox.id = `course-${course.id}`;
+
+                // Disable checkbox if already registered
+                if (registeredCourseIds.includes(course.id)) {
+                    checkbox.disabled = true;
+                }
+
+                const label = document.createElement('label');
+                label.htmlFor = checkbox.id;
+                label.textContent = course.name;
+
+                // Append (Already Registered) text if disabled
+                if (checkbox.disabled) {
+                    const span = document.createElement('span');
+                    span.style.color = 'red';
+                    span.textContent = ' (Already Registered)';
+                    label.appendChild(span);
+                }
+
+                const div = document.createElement('div');
+                div.appendChild(checkbox);
+                div.appendChild(label);
+
+                coursesContainer.appendChild(div);
+            });
+        });
+    });
+
+    // Optional: simple validation on submit to ensure faculty, department and at least one course selected
+    document.querySelector('form').addEventListener('submit', e => {
+        if (!facultySelect.value) {
+            alert("Please select a faculty.");
+            e.preventDefault();
+            return;
+        }
+        if (!departmentSelect.value) {
+            alert("Please select a department.");
+            e.preventDefault();
+            return;
+        }
+        const checkedCourses = [...document.querySelectorAll('input[name="courses"]:checked')];
+        if (checkedCourses.length === 0) {
+            alert("Please select at least one course.");
+            e.preventDefault();
+            return;
+        }
+    });
+
+</script>
+
 {% endblock %}

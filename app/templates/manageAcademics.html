@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add FDC
+{% endblock %}
+
+
+{% block body %}
+<div class="manageAcademics">
+
+    <div class="manageAcademicsBox">
+        <h2>Add Faculty</h2>
+        <form method="POST">
+            <input type="text" name="faculty_name" placeholder="Faculty Name" required>
+            <button type="submit" name="add_faculty">Add Faculty</button>
+        </form>
+    </div>
+
+    <div class="manageAcademicsBox">
+        <h2>Add Department</h2>
+        <form method="POST">
+            <input type="text" name="department_name" placeholder="Department Name" required>
+            <select name="department_faculty" required>
+                <option value="" disabled selected>Select Faculty</option>
+                {% for fac in faculties %}
+                <option value="{{ fac.id }}">{{ fac.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" name="add_department">Add Department</button>
+        </form>
+    </div>
+
+    <div class="manageAcademicsBox">
+        <h2>Add Course</h2>
+        <form method="POST">
+            <input type="text" name="course_name" placeholder="Course Name" required>
+            <input type="text" name="course_code" placeholder="Course Code" required>
+            <select name="course_department" required>
+                <option value="" disabled selected>Select Department</option>
+                {% for dept in departments %}
+                <option value="{{ dept.id }}">{{ dept.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" name="add_course">Add Course</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
