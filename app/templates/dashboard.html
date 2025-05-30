@@ -5,64 +5,66 @@
 {% endblock %}
 
 {% block body %}
-<div class="profileDiv">
-    <h1>Dashboard</h1>
+<div class="profileDivCont">
+    <div class="profileDiv">
+        <h1>Student Dashboard</h1>
 
-    {% if userProfile.program %}
-        <div class="profileBox">
-            <h3>Welcome,  {{ userProfile.lastname }} {{ userfirstname }}</h3>
-            <p>You have successfully applied to Lunverra University. 🎓</p>
-            <p>Your application is now under review. Below is your application details.</p>
-            <ul>
-                <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
-                <li><strong>Date of Birth: </strong>{{ userProfile.dob }}</li>
-                <li><strong>Intake: </strong>{{ userProfile.intake }}</li>
-                <li><strong>Program: </strong>{{ userProfile.program }}</li>
-                <li><strong>Educational Background: </strong>{{ userProfile.edubackground }}</li>
-                <li><strong>Application Date: </strong>{{ app_date.strftime('%Y-%m-%d %H:%M') }}</li>
-            </ul>
+        {% if userProfile.program %}
+            <div class="profileBox">
+                <h3>Welcome,  {{ userProfile.lastname }} {{ userfirstname }}</h3>
+                <p>You have successfully applied to Lunverra University. 🎓</p>
+                <p>Your application is now under review. Below are your application details.</p>
+                <ul>
+                    <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
+                    <li><strong>Date of Birth: </strong>{{ userProfile.dob }}</li>
+                    <li><strong>Intake: </strong>{{ userProfile.intake }}</li>
+                    <li><strong>Program: </strong>{{ userProfile.program }}</li>
+                    <li><strong>Educational Background: </strong>{{ userProfile.edubackground }}</li>
+                    <li><strong>Application Date: </strong>{{ app_date.strftime('%Y-%m-%d %H:%M') }}</li>
+                </ul>
 
-            <div class="status">
-                <p>Application Status: {{ 'Approved' if userProfile.is_approved else 'Pending' }}</p>
-                {% if userProfile.is_approved %}
-                    <a href="/courseregistration">Register Courses</a>
-                {% endif %}
-            </div>
-
-
-            {% if userProfile.is_registered %}
-                <div class="myRegistrations">
-                    <h2>My Course Registrations</h2>
-                    <div class="myCourses">
-                        <h5>Faculty: {{ userProfile.faculty.name }}</h5>
-                        <h5>Department: {{ userProfile.department.name }}</h5>
-
-                        <h6>Registered Courses:</h6>
-                        <ul>
-                        {% for course in registered_courses %}
-                            <li>{{ course.name }} ({{ course.code }})</li>
-                        {% endfor %}
-                        </ul>
-
-                        <a href="/courseregistration">Update Courses</a>
-                    </div>
+                <div class="status">
+                    <p>Application Status: {{ 'Approved' if userProfile.is_approved else 'Pending' }}</p>
+                    {% if userProfile.is_approved %}
+                        <a href="/courseregistration">Register Courses</a>
+                    {% endif %}
                 </div>
-            {% endif %}
 
-        </div>
-    {% else %}
-        <div class="profileBox">
-            <h3>Welcome, {{ userfirstname }}</h3>
-            <ul>
-                <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
-            </ul>
 
-            <div class="status">
-                <p>Application Status: You have no current appliaction.</p>
-                <a href="/application">Proceed to apply</a>
+                {% if userProfile.is_registered %}
+                    <div class="myRegistrations">
+                        <h2>My Course Registrations</h2>
+                        <div class="myCourses">
+                            <h5>Faculty: {{ userProfile.faculty.name }}</h5>
+                            <h5>Department: {{ userProfile.department.name }}</h5>
+
+                            <h6>Registered Courses:</h6>
+                            <ul>
+                            {% for course in registered_courses %}
+                                <li>{{ course.name }} -<strong>({{ course.code }})</strong></li>
+                            {% endfor %}
+                            </ul>
+
+                            <a href="/courseregistration">Update Courses</a>
+                        </div>
+                    </div>
+                {% endif %}
+
             </div>
+        {% else %}
+            <div class="profileBox">
+                <h3>Welcome, {{ userfirstname }}</h3>
+                <ul>
+                    <li><strong>Registration Number:</strong> {{ userProfile.registrationNumber }}</li>
+                </ul>
 
-        </div>
-    {% endif %}
+                <div class="status">
+                    <p>Application Status: You have no current appliaction.</p>
+                    <a href="/application">Proceed to apply</a>
+                </div>
+
+            </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

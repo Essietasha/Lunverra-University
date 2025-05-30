@@ -32,8 +32,17 @@
                     </div>
 
                     <div>
-                        <img src="/static/images/searchicon.webp" height="32px" width="32px" class="menuIcons">
+                        <div id="searchIcon" onclick="toggleSearch(true)">
+                            <img src="/static/images/searchicon.webp" class="menuIcons" style="width: 28px; height: 28px;"/>
+                            <span class="searchText">SEARCH</span>
+                        </div>
+                        <form id="searchForm" class="search-form hidden" onsubmit="return handleSearch(event)">
+                            <input type="text" id="searchBox" placeholder="Search..." />
+                            <span id="closeSearch" onclick="toggleSearch(false)">❌</span>
+                        </form>
                     </div>
+
+
                 </div>
             </nav>
             
@@ -161,14 +170,55 @@
     </body>
 
     <script>
-    function toggleMenu() {
-        const menu = document.getElementById('menu');
-        const icon = document.getElementById('menuToggleIcon');
 
-        menu.classList.toggle('hidden');
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const icon = document.getElementById('menuToggleIcon');
 
-        icon.innerHTML = menu.classList.contains('hidden') ? '&#9776;' : '✖';
-    }
+            menu.classList.toggle('hidden');
+
+            icon.innerHTML = menu.classList.contains('hidden') ? '&#9776;' : '✖';
+        }
+
+        function toggleSearch(show) {
+            const searchIcon = document.getElementById("searchIcon");
+            const searchForm = document.getElementById("searchForm");
+            const searchBox = document.getElementById("searchBox");
+
+            if (show) {
+            searchIcon.style.display = "none";
+            searchForm.classList.remove("hidden");
+            searchBox.focus();
+            } else {
+            searchForm.classList.add("hidden");
+            searchIcon.style.display = "inline";
+            searchBox.value = "";
+            }
+        }
+
+
+        function handleSearch(e) {
+            e.preventDefault();
+            const query = document.getElementById("searchBox").value.trim().toLowerCase();
+
+            const routes = {
+                "admission": "/admission",
+                "application": "/application",
+                "courses": "/courseinformation",
+                "course information": "/courseinformation",
+                "academics": "/academics",
+                "financial services": "/studentfinancialservices",
+            };
+
+            if (routes[query]) {
+                window.location.href = routes[query];
+            } else {
+                alert("No match found for your search.");
+            }
+
+            return false;
+        }
+
+
     </script>
-
 </html>

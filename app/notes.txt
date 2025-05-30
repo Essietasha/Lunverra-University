@@ -95,8 +95,60 @@ STEPS To Recreate/Drop Database / Drop Tables Manually via Flask Shell
                     flask db migrate -m "Recreating database"
                     flask db upgrade
 
+Sass:
+    INSTALLATION: Using VSCode Extension
+    Install Sass via npm (Node.js)
+        Install Node.js
+        npm install -g sass
+        Compile; Run: sass input.scss output.css
+    Create a scss folder in the main root. Create a style.css file within it. Write css codes in it.
+    Create a css folder in the root as well.
+    Link with index.html/layout.html
+    Terminal - Run "npm install -g sass"
+    Install 'Live Sass Compiler' from VSCode extension.
+    Beneath vscode footer, click "watch sass" to keep watching styles.
+    Will generate a style.css file.
+    Vscode Settings >> Search Live compile >> Formats >> "liveSassCompile.settings.formats" >> "savePath": "/css".
+    Sass Compile/Rerun: sass --watch app/static/scss:app/static/css
+    OR sass static/scss:static/css --watch
 
+    Using Main and Submain/Partial Sass Files:
+        Name must begin with Underscore(_others.scss)
+        static/
+            ├── scss/
+            │   ├── styles.scss         <-- Main entry point
+            │   ├── _variables.scss     <-- Partial
+            │   ├── _mixins.scss        <-- Partial
+            │   ├── _base.scss          <-- Partial
+            │   ├── _layout.scss        <-- Partial
+            │   └── _components.scss    <-- Partial
+            └── 
+
+            Import Only in styles.scss(the main scss file)
+                @import 'variables';
+                @import 'mixins';
+                @import 'base';
+                @import 'layout';
+                @import 'components';
+
+            In others.scss files: 
+                @import 'variables' or other needed like mixins;
+            
+            Compile: sass static/scss:static/css --watch
 Sass Rerun: sass --watch app/static/scss:app/static/css
+
+
+Using Jinja:
+    Jinja2 comes pre-installed with Flask, no need to install it separately. Simply use render_template() and html files in project templates folder.
+    {% extends "layout.html" %}
+
+    {% block title %}
+        Home
+    {% endblock %}
+
+    {% block body %}
+        {% include "contact.html" %}
+    {% endblock %}
 
 Generating SECRET_KEY: Steps to Properly Manage Flask Secret Key:
     1. Generate a Secure Key: In Venv, Run: python -c "import secrets; print(secrets.token_hex(24))" This will produce a secure key such as 09f823a6b9c923b2e9a7f6f2af3d5c76c3f45ef7c2e4

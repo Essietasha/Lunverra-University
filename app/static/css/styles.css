@@ -318,6 +318,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-left: 150px;
+  background-color: #f0f0f0;
 }
 .mainpage h1 {
   color: #111;
@@ -562,6 +563,42 @@
   color: rgb(243, 239, 239);
 }
 
+.slide-in {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 1.5s forwards;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInRight 1.5s forwards;
+}
+
+.fade-in {
+  animation: fadeInOpacity 1.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInOpacity {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media (max-width: 1100px) {
   .academics {
     grid-template-columns: repeat(2, 1fr);
@@ -718,8 +755,50 @@ button:hover {
   color: #ffffff;
 }
 
+#searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#searchIcon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+#searchIcon span {
+  font-size: 0.9rem;
+}
+
+.search-form {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  padding-left: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+#searchBox {
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+}
+
+#closeSearch {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+#closeSearch:hover {
+  transform: rotate(90deg);
+  color: red;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .footerPage {
@@ -798,13 +877,23 @@ button:hover {
 }
 @media (max-width: 600px) {
   .customNav {
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.5rem;
   }
   .customNav #menuToggleIcon {
     font-size: 1.5rem;
   }
   .customNav .lunverra a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+  .search-form {
+    display: inline-flex;
+    padding-left: 5px;
+  }
+  #searchBox {
+    font-size: 0.5rem;
+  }
+  #closeSearch {
+    font-size: 1rem;
   }
   .footerPage {
     padding: 1rem;
@@ -829,6 +918,9 @@ button:hover {
   .footerPage .footerblock .socials {
     font-size: 1.6rem;
     margin-left: 0px;
+  }
+  .searchText {
+    display: none;
   }
 }
 .academicsMainPage {
@@ -1125,26 +1217,96 @@ button:hover {
     font-size: 1.2rem;
   }
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
 .applicationWrapper {
-  padding: 2rem 1rem;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #eaf2ff, #f9fbff);
+  min-height: 100vh;
 }
-
-.applicationCard {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+.applicationWrapper .applicationCard {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 12px 30px rgba(0, 47, 167, 0.08);
+  transition: box-shadow 0.3s ease;
 }
-
-.form-title {
+.applicationWrapper .applicationCard:hover {
+  box-shadow: 0 18px 40px rgba(0, 47, 167, 0.12);
+}
+.applicationWrapper .applicationCard .form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a2e6e;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.5px;
+}
+.applicationWrapper .applicationCard label {
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  color: #1f3a93;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.applicationWrapper .applicationCard input[type=text],
+.applicationWrapper .applicationCard input[type=email],
+.applicationWrapper .applicationCard input[type=tel],
+.applicationWrapper .applicationCard input[type=date],
+.applicationWrapper .applicationCard select,
+.applicationWrapper .applicationCard textarea {
+  background: #f5f8ff;
+  border: 1px solid #ccd7f5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #2b2f55;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+.applicationWrapper .applicationCard input[type=text]:focus,
+.applicationWrapper .applicationCard input[type=email]:focus,
+.applicationWrapper .applicationCard input[type=tel]:focus,
+.applicationWrapper .applicationCard input[type=date]:focus,
+.applicationWrapper .applicationCard select:focus,
+.applicationWrapper .applicationCard textarea:focus {
+  border-color: #0b1d8a;
+  box-shadow: 0 0 0 3px rgba(11, 29, 138, 0.1);
+  outline: none;
+}
+.applicationWrapper .applicationCard input[type=text]:read-only,
+.applicationWrapper .applicationCard input[type=email]:read-only,
+.applicationWrapper .applicationCard input[type=tel]:read-only,
+.applicationWrapper .applicationCard input[type=date]:read-only,
+.applicationWrapper .applicationCard select:read-only,
+.applicationWrapper .applicationCard textarea:read-only {
+  background-color: #e9efff;
+  color: #6b6b6b;
+}
+.applicationWrapper .applicationCard textarea {
+  resize: vertical;
+}
+.applicationWrapper .applicationCard .btn {
+  background-color: #0b1d8a;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.applicationWrapper .applicationCard .btn:hover {
+  background-color: #1c39bb;
 }
 
-@media (min-width: 768px) {
-  .application-wrapper {
-    padding: 6rem;
+@media (max-width: 768px) {
+  .applicationCard {
+    padding: 2rem 1.5rem;
+  }
+  .applicationCard .form-title {
+    font-size: 1.6rem;
   }
 }
 .contactSec {
@@ -1642,38 +1804,135 @@ button:hover {
   background-color: rgb(11, 89, 11);
 }
 
+.profileDivCont {
+  background-color: #f9fbff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
 .profileDiv {
-  padding: 2rem;
-  min-height: 100vh;
+  max-width: 900px;
+  padding: 40px 45px;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0, 47, 167, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e2a78;
+  transition: box-shadow 0.3s ease;
+}
+.profileDiv:hover {
+  box-shadow: 0 18px 38px rgba(0, 47, 167, 0.15), 0 12px 12px rgba(0, 0, 0, 0.06);
 }
 .profileDiv h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #0b1d8a;
+  letter-spacing: 1.1px;
   text-align: center;
 }
-.profileDiv h3 {
-  margin-bottom: 1rem;
-}
 .profileDiv .profileBox {
-  padding: 2rem 8rem;
-  line-height: 2rem;
+  background: white;
+  border-radius: 14px;
+  padding: 30px 35px;
+  box-shadow: 0 8px 20px rgba(0, 47, 167, 0.08);
+  color: #2a3a8c;
+  padding: 0rem 1rem;
+}
+.profileDiv .profileBox h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #0a1b72;
+  letter-spacing: 0.04em;
+}
+.profileDiv .profileBox p {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #3a4480;
+  line-height: 1.5;
 }
 .profileDiv .profileBox ul {
-  list-style: none;
-  padding: 0;
+  list-style: inside disc;
+  padding-left: 0;
+  margin-bottom: 24px;
+  color: #344ea1;
+}
+.profileDiv .profileBox ul li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.profileDiv .profileBox ul li strong {
+  color: #1a2e6e;
 }
 .profileDiv .profileBox .status {
-  background-color: green;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-  border: 1px solid transparent;
-  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1f3a93;
+  margin-bottom: 30px;
 }
-.profileDiv .profileBox a {
-  color: #fff;
-  font-weight: bold;
+.profileDiv .profileBox .status p {
+  margin-bottom: 12px;
+}
+.profileDiv .profileBox .status a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #0b1d8a, #1c39bb);
+  color: white;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.profileDiv .profileBox .status a:hover {
+  background: linear-gradient(135deg, #1c39bb, #0b1d8a);
+}
+.profileDiv .profileBox .myRegistrations {
+  margin-top: 40px;
+}
+.profileDiv .profileBox .myRegistrations h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #122c7a;
+  border-bottom: 3px solid #0b1d8a;
+  padding-bottom: 8px;
+}
+.profileDiv .profileBox .myRegistrations .myCourses h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #203575;
+}
+.profileDiv .profileBox .myRegistrations .myCourses h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  color: #1a2d6f;
+}
+.profileDiv .profileBox .myRegistrations .myCourses ul {
+  list-style: disc;
+  margin-bottom: 25px;
+}
+.profileDiv .profileBox .myRegistrations .myCourses ul li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.profileDiv .profileBox .myRegistrations .myCourses ul li strong {
+  font-weight: 700;
+  color: #102359;
+}
+.profileDiv .profileBox .myRegistrations .myCourses a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b1d8a;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.profileDiv .profileBox .myRegistrations .myCourses a:hover {
+  color: #1c39bb;
 }
 
 .studentsDiv {
@@ -1725,6 +1984,12 @@ button:hover {
 .myRegistrations .myCourses a {
   color: rgb(10, 89, 10);
 }
+.myRegistrations .myCourses ul {
+  padding-left: 2rem;
+}
+.myRegistrations .myCourses li {
+  list-style-type: square;
+}
 
 .manageAcademics {
   display: grid;
@@ -1763,20 +2028,154 @@ button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 600px) {
-  .manageAcademics {
-    display: block;
-    padding: 2rem;
-  }
-  .manageAcademicsBox {
-    margin-bottom: 1rem;
-    padding: 2rem 1rem;
-  }
-}
-.alert {
-  margin-bottom: 0;
+.courseRegistrationCont {
+  background-color: #f9fbff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0rem;
 }
 
+.courseRegistration {
+  max-width: 600px;
+  padding: 2rem 8rem;
+  background: linear-gradient(145deg, #ffffff, #e6f0ff);
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0, 123, 255, 0.15), 0 10px 10px rgba(0, 0, 0, 0.07);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  transition: box-shadow 0.3s ease;
+}
+.courseRegistration:hover {
+  box-shadow: 0 18px 38px rgba(0, 123, 255, 0.25), 0 12px 12px rgba(0, 0, 0, 0.1);
+}
+.courseRegistration h4 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 36px;
+  color: #0d47a1;
+  letter-spacing: 1.2px;
+}
+.courseRegistration label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1a237e;
+  letter-spacing: 0.02em;
+}
+.courseRegistration select,
+.courseRegistration button {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  border: 1.8px solid #90caf9;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0d47a1;
+  background-color: #f0f7ff;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.courseRegistration select:focus,
+.courseRegistration button:focus {
+  border-color: #0d47a1;
+  box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.3);
+  outline: none;
+  background-color: #e3f2fd;
+  color: #0a357b;
+}
+.courseRegistration select:disabled,
+.courseRegistration button:disabled {
+  background-color: #cfd8dc;
+  color: #7b8a93;
+  border-color: #b0bec5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.courseRegistration #coursesContainer {
+  margin-bottom: 32px;
+}
+.courseRegistration #coursesContainer .courseCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #d0e3ff);
+  border: 1px solid #90caf9;
+  box-shadow: 2px 2px 5px rgba(13, 71, 161, 0.15);
+  transition: background-color 0.25s ease;
+}
+.courseRegistration #coursesContainer .courseCheckbox:hover {
+  background-color: #bbd7ff;
+}
+.courseRegistration #coursesContainer .courseCheckbox input[type=checkbox] {
+  transform: scale(1.25);
+  accent-color: #0d47a1;
+  cursor: pointer;
+  transition: accent-color 0.25s ease;
+}
+.courseRegistration #coursesContainer .courseCheckbox input[type=checkbox]:disabled {
+  cursor: not-allowed;
+  accent-color: #90a4ae;
+}
+.courseRegistration #coursesContainer .courseCheckbox label {
+  font-weight: 600;
+  color: #0d47a1;
+  user-select: none;
+}
+.courseRegistration #coursesContainer .courseCheckbox span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d32f2f;
+  margin-left: 6px;
+}
+.courseRegistration button {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 0;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(13, 71, 161, 0.5);
+  transition: background 0.35s ease, transform 0.2s ease;
+}
+.courseRegistration button:hover {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(13, 71, 161, 0.6);
+}
+.courseRegistration button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(13, 71, 161, 0.4);
+}
+
+.alert {
+  margin-bottom: 0;
+  opacity: 0;
+  animation: fadeInOut 4s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (max-width: 600px) {
   .extras .bgColor .extrasHeader {
     height: 35vh;
@@ -1837,16 +2236,6 @@ button:hover {
   .approvals .approvalGrid {
     display: block;
   }
-  .profileDiv {
-    padding: 2rem 1rem;
-  }
-  .profileDiv .profileBox {
-    padding: 2rem 0rem;
-    line-height: 2rem;
-  }
-  .profileDiv .profileBox .status {
-    display: block;
-  }
   .studentsDiv {
     padding: 2rem 0.5rem;
   }
@@ -1877,6 +2266,73 @@ button:hover {
     padding: 5px;
     font-weight: bold;
     font-size: 0.8rem;
+  }
+  .manageAcademics {
+    display: block;
+    padding: 2rem;
+  }
+  .manageAcademicsBox {
+    margin-bottom: 1rem;
+    padding: 2rem 1rem;
+  }
+  .courseRegistrationCont {
+    padding: 2rem 0rem;
+  }
+  .courseRegistration {
+    margin: 40px 20px;
+    padding: 1rem;
+  }
+  .courseRegistration h4 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .courseRegistration select,
+  .courseRegistration button {
+    font-size: 14px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+  .courseRegistration #coursesContainer .courseCheckbox {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+  .courseRegistration #coursesContainer .courseCheckbox label {
+    font-size: 14px;
+  }
+  .courseRegistration #coursesContainer .courseCheckbox input[type=checkbox] {
+    transform: scale(1.1);
+  }
+  .profileDiv {
+    padding: 25px 20px;
+  }
+  .profileDiv h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .profileDiv .profileBox {
+    padding: 25px 20px;
+  }
+  .profileDiv .profileBox h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .profileDiv .profileBox p,
+  .profileDiv .profileBox .status p {
+    font-size: 14px;
+  }
+  .profileDiv .profileBox ul li {
+    font-size: 14px;
+  }
+  .profileDiv .profileBox .myRegistrations h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .profileDiv .profileBox .myRegistrations .myCourses h5,
+  .profileDiv .profileBox .myRegistrations .myCourses h6 {
+    font-size: 16px;
+  }
+  .profileDiv .profileBox .myRegistrations .myCourses ul li {
+    font-size: 14px;
   }
 }
 * {

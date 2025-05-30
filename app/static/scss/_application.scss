@@ -1,24 +1,96 @@
 @import 'variables';
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 .applicationWrapper {
-    padding: 2rem 1rem;
-}
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #eaf2ff, #f9fbff);
+  min-height: 100vh;
 
-.applicationCard {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 2rem;
-}
+  .applicationCard {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 12px 30px rgba(0, 47, 167, 0.08);
+    transition: box-shadow 0.3s ease;
 
-.form-title {
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-@media (min-width: 768px) {
-    .application-wrapper {
-    padding: 6rem;
+    &:hover {
+      box-shadow: 0 18px 40px rgba(0, 47, 167, 0.12);
     }
+
+    .form-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a2e6e;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #1f3a93;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      background: #f5f8ff;
+      border: 1px solid #ccd7f5;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      color: #2b2f55;
+      transition: border 0.2s ease, box-shadow 0.2s ease;
+
+      &:focus {
+        border-color: #0b1d8a;
+        box-shadow: 0 0 0 3px rgba(11, 29, 138, 0.1);
+        outline: none;
+      }
+
+      &:read-only {
+        background-color: #e9efff;
+        color: #6b6b6b;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: #0b1d8a;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 2.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #1c39bb;
+      }
+    }
+  }
 }
+
+@media (max-width: 768px) {
+  .applicationCard {
+    padding: 2rem 1.5rem;
+
+    .form-title {
+      font-size: 1.6rem;
+    }
+  }
+}
+

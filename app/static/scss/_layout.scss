@@ -95,8 +95,51 @@ button {
     }
 }
 
+#searchIcon {
+  @include flexCenter();
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    span{
+        font-size: 0.9rem;
+    }
+}
+
+.search-form {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  padding-left: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+#searchBox {
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+}
+
+#closeSearch {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+
+    &:hover {
+        transform: rotate(90deg);
+        color: red;
+    }
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 
@@ -205,7 +248,7 @@ button {
 @media (max-width:600px) {
 
     .customNav{
-        padding: 0.5rem 2rem;
+        padding: 0.5rem 1.5rem;
 
         #menuToggleIcon {
             font-size: 1.5rem;
@@ -214,9 +257,22 @@ button {
         .lunverra{
 
             a{
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
         }
+    }
+    
+    .search-form {
+        display: inline-flex;
+        padding-left: 5px;
+    }
+
+    #searchBox {
+        font-size: 0.5rem;
+    }
+
+    #closeSearch {
+        font-size: 1rem;
     }
 
     .footerPage {
@@ -253,5 +309,9 @@ button {
                 margin-left: 0px;
             }
         }
+    }
+
+    .searchText{
+        display: none;
     }
 }

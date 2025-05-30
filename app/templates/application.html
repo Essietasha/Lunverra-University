@@ -5,82 +5,84 @@
 {% endblock %}
 
 {% block body %}
-<div class="container applicationWrapper my-3">
-  <div class="row justify-content-center">
-    <div class="col-md-10 col-lg-8">
-      <div class="applicationCard shadow p-4 rounded bg-light">
-        <h2 class="form-title text-center mb-4">Lunverra Application Form</h2>
+<div class="profileDivCont">
+  <div class="container applicationWrapper my-3">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="applicationCard shadow p-4 rounded bg-light">
+          <h2 class="form-title text-center mb-4">Lunverra Application Form</h2>
 
-        <form action="/application" method="POST" enctype="multipart/form-data">
-          <div class="row g-3">
+          <form action="/application" method="POST" enctype="multipart/form-data">
+            <div class="row g-3">
 
-            <div class="col-md-6">
-              <label for="firstName" class="form-label">First Name</label>
-              <input type="text" id="firstName" name="firstname" value="{{ firstname or '' }}" class="form-control" readonly>
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" name="firstname" value="{{ firstname or '' }}" class="form-control" readonly>
+              </div>
+
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" name="lastname" class="form-control" name="lastname" required autocomplete="off">
+              </div>
+
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" value="{{ email or '' }}" class="form-control" readonly>
+              </div>
+
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" name="phone" required autocomplete="off">
+              </div>
+
+              <div class="col-md-6">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" id="dob" class="form-control" name="dob" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="program" class="form-label">Program of Interest</label>
+                <select id="program" class="form-select" name="program" required>
+                  <option selected disabled>Choose...</option>
+                  <option>Undergraduate Studies</option>
+                  <option>Masters Degree</option>
+                  <option>Post Grdauate Studies</option>
+                  <option>Doctor of Philosophy</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="intake" class="form-label">Preferred Intake</label>
+                <select id="intake" class="form-select" name="intake" required>
+                  <option selected disabled>Choose...</option>
+                  <option>September 2026</option>
+                  <option>April 2027</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="education" class="form-label">Educational Background</label>
+                <textarea id="education" class="form-control" name="edubackground" rows="3" placeholder="List your previous institutions, qualifications..." required></textarea>
+              </div>
+
+              <!-- <div class="col-12">
+                <label for="documents" class="form-label">Upload Supporting Documents</label>
+                <input type="file" id="documents" class="form-control" accept=".pdf, .jpg, .png, .jpeg" multiple required>
+              </div> -->
+
+              <div class="col-12">
+                <label for="message" class="form-label">Additional Message (Optional)</label>
+                <textarea id="message" class="form-control" name="addMessage" rows="3" placeholder="Any additional information you want us to know?"></textarea>
+              </div>
+
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark px-4 mt-3">Submit Application</button>
+              </div>
+
             </div>
+          </form>
 
-            <div class="col-md-6">
-              <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" id="lastName" name="lastname" class="form-control" name="lastname" required autocomplete="off">
-            </div>
-
-            <div class="col-md-6">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" name="email" id="email" value="{{ email or '' }}" class="form-control" readonly>
-            </div>
-
-            <div class="col-md-6">
-              <label for="phone" class="form-label">Phone Number</label>
-              <input type="tel" id="phone" class="form-control" name="phone" required autocomplete="off">
-            </div>
-
-            <div class="col-md-6">
-              <label for="dob" class="form-label">Date of Birth</label>
-              <input type="date" id="dob" class="form-control" name="dob" required>
-            </div>
-
-            <div class="col-md-6">
-              <label for="program" class="form-label">Program of Interest</label>
-              <select id="program" class="form-select" name="program" required>
-                <option selected disabled>Choose...</option>
-                <option>Undergraduate Studies</option>
-                <option>Masters Degree</option>
-                <option>Post Grdauate Studies</option>
-                <option>Doctor of Philosophy</option>
-              </select>
-            </div>
-
-            <div class="col-md-6">
-              <label for="intake" class="form-label">Preferred Intake</label>
-              <select id="intake" class="form-select" name="intake" required>
-                <option selected disabled>Choose...</option>
-                <option>September 2026</option>
-                <option>April 2027</option>
-              </select>
-            </div>
-
-            <div class="col-12">
-              <label for="education" class="form-label">Educational Background</label>
-              <textarea id="education" class="form-control" name="edubackground" rows="3" placeholder="List your previous institutions, qualifications..." required></textarea>
-            </div>
-
-            <!-- <div class="col-12">
-              <label for="documents" class="form-label">Upload Supporting Documents</label>
-              <input type="file" id="documents" class="form-control" accept=".pdf, .jpg, .png, .jpeg" multiple required>
-            </div> -->
-
-            <div class="col-12">
-              <label for="message" class="form-label">Additional Message (Optional)</label>
-              <textarea id="message" class="form-control" name="addMessage" rows="3" placeholder="Any additional information you want us to know?"></textarea>
-            </div>
-
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-dark px-4 mt-3">Submit Application</button>
-            </div>
-
-          </div>
-        </form>
-
+        </div>
       </div>
     </div>
   </div>
