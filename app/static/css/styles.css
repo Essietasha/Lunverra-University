@@ -313,6 +313,7 @@
   }
 }
 .mainpage {
+  position: relative;
   height: 100vh;
   background-image: url(/static/images/gradmale.webp);
   background-size: cover;
@@ -320,8 +321,22 @@
   padding-left: 150px;
   background-color: #f0f0f0;
 }
+.mainpage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.mainpage .mainpageTextEl {
+  position: relative;
+  z-index: 2;
+}
 .mainpage h1 {
-  color: #111;
+  color: #881125;
   padding-top: 150px;
 }
 .mainpage h4 {
@@ -336,7 +351,7 @@
   color: rgb(183, 15, 15);
   padding: 1rem 3rem;
   border-radius: 3px;
-  background-color: #fff;
+  background-color: #f0f0f0;
   border: 1px #fff;
   text-decoration: none;
   font-size: 1.2rem;
