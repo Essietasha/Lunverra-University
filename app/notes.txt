@@ -274,7 +274,8 @@ if __name__ == "__main__":
     "From the folder named app, import the Flask app I created."
     From myapp folder, import the app object, which is my Flask application instance which i created with app = Flask(__name__) usually within the _init_.py file. That line creates the Flask application.
 
-//Connect sqlite3 to Python to Query DBimport sqlite3
+//Connect sqlite3 to Python to Query DB
+    import sqlite3
     import os
 
     db_path = os.path.join("instance", "ludb.db")
