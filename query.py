@@ -13,37 +13,22 @@ cursor = conn.cursor()
 #     print(table[0])
 
 # Fetch all users
-cursor.execute("SELECT * FROM User;")
-userRows = cursor.fetchall()
-for user in userRows:
-    print(user)
+# cursor.execute("SELECT * FROM User;")
+# userRows = cursor.fetchall()
+# for user in userRows:
+#     print(user)
 
-cursor.execute("SELECT * FROM Application;")
-rows = cursor.fetchall()
-for appl in rows:
-    print(appl)
+# cursor.execute("SELECT * FROM Application;")
+# rows = cursor.fetchall()
+# for appl in rows:
+#     print(appl)
 
-cursor.execute("SELECT * FROM Faculty;")
-rows = cursor.fetchall()
-for f in rows:
-    print(f)
-
-cursor.execute("SELECT * FROM Department;")
-rows = cursor.fetchall()
-for f in rows:
-    print(f)
-
-cursor.execute("SELECT * FROM Course;")
-rows = cursor.fetchall()
-for f in rows:
-    print(f)
 
 # def delUser():
 #     name = 'essietasha'
 #     cursor.execute("DELETE FROM User WHERE firstname = ?", (name,))
 #     print(f'{name} deleted')
 #     conn.commit()
-
 # delUser()
 
 # def delApplication():
@@ -51,7 +36,6 @@ for f in rows:
 #     cursor.execute("DELETE FROM Application WHERE id = ?", (id,))
 #     print(f'Application {id} deleted')
 #     conn.commit()
-
 # delApplication()
 
 
