@@ -23,8 +23,8 @@ def init_mail_config(app):
     app.config['MAIL_SERVER'] = 'smtp.gmail.com'
     app.config['MAIL_PORT'] = 587
     app.config['MAIL_USE_TLS'] = True
-    app.config['MAIL_USERNAME'] = 'essietasharae@gmail.com'
-    app.config['MAIL_PASSWORD'] = 'aipwffszzzmzdycs'
+    app.config['MAIL_USERNAME'] = ''
+    app.config['MAIL_PASSWORD'] = ''
     mail.init_app(app) 
     # A method of Flask-Mail
     # Flask-Mail extension object (mail) uses the method .init_app(app) to bind to my Flask app.
