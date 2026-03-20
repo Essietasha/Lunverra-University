@@ -20,7 +20,7 @@ SQLAlchemy ORM for database interactions.
 Flask-Migrate for easy schema updates.
 Dynamic Frontend
 Jinja2 templates with reusable layout for consistent UI.
-Responsive HTML/CSS design.
+Responsive design.
 
 
 
@@ -29,7 +29,7 @@ Responsive HTML/CSS design.
 Python, Flask, Flask-SQLAlchemy, Flask-Session, Flask-Migrate
 
 ### Frontend
-HTML, CSS, Jinja2
+HTML, Sass/SCSS, Jinja2
 	
 ### 
 Database: SQLite (development)
