@@ -22,7 +22,19 @@ Dynamic Frontend
 Jinja2 templates with reusable layout for consistent UI.
 Responsive design.
 
-
+### Overview
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/17e89ac1-2056-49d1-9347-54cb2788e6ad" width="80%">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/00f434bf-4ab2-4dc9-a69a-e5c78cf4c2bc" width="80%">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0926376a-e0c5-48bc-aee0-30d418ce2bd0" width="80%">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c240f82a-2093-4377-a99f-51f46655320a" width="80%">
+</p>
 
 ## Tech Stack
 ### Backend
