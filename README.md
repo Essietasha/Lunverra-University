@@ -30,6 +30,9 @@ Responsive design.
   <img src="https://github.com/user-attachments/assets/00f434bf-4ab2-4dc9-a69a-e5c78cf4c2bc" width="80%">
 </p>
 <p align="center">
+  <img src="https://github.com/user-attachments/assets/6d43e618-0a19-45db-a46e-8262ddb23a90" width="80%">
+</p>
+<p align="center">
   <img src="https://github.com/user-attachments/assets/0926376a-e0c5-48bc-aee0-30d418ce2bd0" width="80%">
 </p>
 <p align="center">
